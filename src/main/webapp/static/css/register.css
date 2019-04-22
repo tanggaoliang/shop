@@ -1,0 +1,33 @@
+body{
+    background-image: url("/static/image/index.jpg");
+    background-size: 100% 100%;
+}
+
+.main {
+    margin: auto auto;
+    width: 520px;
+    height: 300px;
+}
+
+
+#title {
+    margin-top: 100px;
+    font-family: "Microsoft YaHei UI";
+}
+
+#outBox {
+
+    margin: 0 auto;
+    width: 660px;
+    height: 350px;
+    padding: 60px;
+    background: #ffffff;
+}
+
+
+#bottom1 {
+    width: 100%;
+}
+#bottom2 {
+    width: 100%;
+}
