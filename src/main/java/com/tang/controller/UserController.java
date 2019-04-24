@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -95,7 +96,6 @@ public class UserController {
 
     @RequestMapping("loginAction")
     public ModelAndView loginAction(@RequestParam("userName") String userName, @RequestParam("password") String password, HttpSession session) {
-
         User user = userService.getByUserName(userName);
         if (null != user) {
             String passwordInDB = user.getPassword();
@@ -103,19 +103,20 @@ public class UserController {
             String passwordEncoded = new SimpleHash("md5", password, salt, 2).toString();
             if (passwordEncoded.equals(passwordInDB)) {
                 session.setAttribute("user", user);
-                List<Product> products = productService.list();
-                for(Product product:products){
+
+                List<Product> products = productService.listByCid(1);
+                for (Product product : products) {
                     System.out.println(product);
                 }
-                ModelAndView modelAndView = new ModelAndView("/home");
-                modelAndView.addObject("products", products);
+                session.setAttribute("products",products);
+                ModelAndView modelAndView = new ModelAndView("redirect:/home");
                 return modelAndView;
             }
         }
         ModelAndView modelAndView = new ModelAndView("redirect:/");
         modelAndView.addObject("errorInfo", "登录失败,用户名或密码错误");
         return modelAndView;
-
-
     }
+
+
 }

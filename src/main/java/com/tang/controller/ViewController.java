@@ -48,6 +48,7 @@ public class ViewController {
     public String add() {
         return "add";
     }
+
     @RequestMapping("/home")
     public String home() {
         return "home";

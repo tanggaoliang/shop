@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tang.mapper.UserMapper">
+    <insert id="add" parameterType="User">
+        insert into user
+        values (null, #{userName}, #{password}, #{salt})
+    </insert>
+
+    <delete id="delete" parameterType="User">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="User">
+        select *
+        from user
+        where id = #{id}
+    </select>
+    <select id="getByUserName" parameterType="User" resultType="User">
+        select *
+        from user
+        where username = #{userName}
+    </select>
+
+    <update id="update" parameterType="User">
+        update user
+        set username=#{name},
+            password=#{password},
+            salt=#{salt}
+        where id = #{id}
+    </update>
+    <select id="list" resultType="User">
+        select *
+        from user
+    </select>
+</mapper>

@@ -19,6 +19,11 @@ public interface ProductMapper {
 
     public int update(Product product);
 
-    public List<Product> list();
+    public List<Product> listByCid(int cid);
+
+    public List<Product> listAll();
+
+
+    public List<Product> listByName(String name);
 
 }

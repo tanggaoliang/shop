@@ -22,10 +22,19 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductMapper productMapper;
 
+    @Override
+    public List<Product> listByName(String name) {
+        return productMapper.listByName(name);
+    }
 
     @Override
-    public List<Product> list() {
-        return productMapper.list();
+    public List<Product> listByCid(int cid) {
+        return productMapper.listByCid(cid);
+    }
+
+    @Override
+    public List<Product> listAll() {
+        return productMapper.listAll();
     }
 
     @Override

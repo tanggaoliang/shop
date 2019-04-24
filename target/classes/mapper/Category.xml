@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tang.mapper.CategoryMapper">
+    <resultMap id="categoryBean" type="com.tang.pojo.Category">
+        <id column="cid" property="id"/>
+        <result column="cname" property="name"/>
+        <collection property="products" ofType="Product">
+            <id column="pid" property="id"/>
+            <result column="pname" property="name"/>
+            <result column="fileName" property="fileName"/>
+            <result column="price" property="price"/>
+            <result column="info" property="info"/>
+        </collection>
+    </resultMap>
+
+    <insert id="add" parameterType="com.tang.pojo.Category">
+        insert into category (name)
+        values (#{name})
+    </insert>
+
+    <delete id="delete" parameterType="com.tang.pojo.Category">
+        delete
+        from category
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="com.tang.pojo.Category">
+        select *
+        from category
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.tang.pojo.Category">
+        update category
+        set name=#{name}
+        where id = #{id}
+    </update>
+    <select id="list" resultMap="categoryBean">
+        select c.*, p.*, c.id 'cid', p.id 'pid', c.name 'cname', p.name 'pname'
+        from category
+                 left join product p on category.id = p.cid
+    </select>
+</mapper>

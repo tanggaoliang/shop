@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-transaction-full.xml")
 public class ProductTest {
@@ -23,18 +25,12 @@ public class ProductTest {
 
     @Test
     public void insert() {
-        Product product = new Product();
-        Category category = new Category();
-        category.setId(1);
-        for (int i = 1; i < 21; i++) {
-            product.setName("product " + i);
-            product.setFileName("peijian2");
-            product.setPrice(i * 100);
-            product.setInfo("product info " + i);
-            product.setCategory(category);
-            productMapper.add(product);
-
+        List<Product> products = productMapper.listByCid(1);
+        for (Product product : products) {
+            System.out.println(product);
         }
-    }
 
+    }
 }
+
+

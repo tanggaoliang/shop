@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface ProductService {
 
-    List<Product> list();
+
+    List<Product> listByCid(int cid);
+
+    List<Product> listAll();
 
     void add(Product c);
 
@@ -15,5 +18,7 @@ public interface ProductService {
     void delete(Product c);
 
     Product get(int id);
+
+     List<Product> listByName(String name);
 
 }
