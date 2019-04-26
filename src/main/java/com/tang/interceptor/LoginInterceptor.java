@@ -19,9 +19,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String[] equalUri = {"/register", "/", "/index","/check","/listCategory"};
-        String[] containUri = {"bootstrap", "favicon", "css", "js"};
+        String[] containUri = {"bootstrap", "favicon", "css", "js","login"};
         String uri = request.getRequestURI();
-//        System.out.println("uri =" + uri);
         //UTL:除了login.jsp是可以公开访问的，其他的URL都进行拦截控制
         for (String item : equalUri) {
             if (item.equals(uri)) {
@@ -36,13 +35,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         }
         //获取session
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("USER_SESSION");
+        User user = (User) session.getAttribute("user");
         //判断session中是否有用户数据，如果有，则返回true，继续向下执行
         if (user != null) {
             return true;
         }
         //不符合条件的给出提示信息，并转发到登录页面
-//        request.getRequestDispatcher("/").forward(request, response);
         request.setCharacterEncoding("utf-8");
         response.setHeader("Content-type", "text/html;charset=UTF-8");
         response.setCharacterEncoding("utf-8");
@@ -50,7 +48,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         out.print("<script>alert('请您先登录'); window.location='/' </script>");
         out.flush();
         out.close();
-//      response.sendRedirect("/");
         return false;
     }
 

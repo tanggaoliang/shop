@@ -70,7 +70,7 @@ public class Product {
                 ", fileName='" + fileName + '\'' +
                 ", price=" + price +
                 ", info='" + info + '\'' +
-                ", category=" + category.getId() +
+//                ", category=" + category.getId() +
                 '}';
     }
 }

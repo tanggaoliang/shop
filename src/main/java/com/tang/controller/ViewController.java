@@ -59,9 +59,15 @@ public class ViewController {
         return "test";
     }
 
-    @RequestMapping("/getAll")
-    public String getAll() {
-        return "redirect:/getAll";
+
+    @RequestMapping("/header")
+    public String header() {
+        return "header";
+    }
+
+    @RequestMapping("/detail")
+    public String detail() {
+        return "detail";
     }
 
     @RequestMapping("/check")
@@ -76,4 +82,6 @@ public class ViewController {
 
         return modelAndView;
     }
+
+
 }

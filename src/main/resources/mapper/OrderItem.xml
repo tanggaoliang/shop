@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tang.mapper.OrderItemMapper">
+    <resultMap id="orderItemBean" type="com.tang.pojo.OrderItem">
+        <id column="oid" property="id"/>
+        <result column="num" property="num"/>
+        <association property="product" javaType="com.tang.pojo.Product">
+            <id column="opid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="price" property="price"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.tang.pojo.OrderItem">
+        insert into orderItem
+        values (null, #{user.id}, #{product.id}, #{num}, #{success})
+    </insert>
+
+    <delete id="delete" parameterType="com.tang.pojo.OrderItem">
+        delete
+        from orderItem
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultMap="orderItemBean">
+        select *
+        from orderItem
+        where id = #{id}
+    </select>
+
+    <select id="listByCartByUid" parameterType="_int" resultMap="orderItemBean">
+        select o.*, p.*, o.id oid, p.id pid
+        from orderitem o
+                 left join product p on o.pid = p.Id
+        where o.success = 0
+          and uid = #{uid}
+    </select>
+
+    <update id="update" parameterType="com.tang.pojo.OrderItem">
+        update orderItem
+        set num=#{num},
+            success=#{success}
+        where id = #{id}
+    </update>
+
+    <select id="listByCart" resultMap="orderItemBean">
+        select o.*, p.*, o.id oid, p.id pid
+        from orderitem o
+                 left join product p on o.pid = p.Id
+        where o.success = 0;
+    </select>
+
+    <select id="listByOrder" resultMap="orderItemBean">
+        select o.*, p.*, o.id oid, p.id pid
+        from orderitem o
+                 left join product p on o.pid = p.Id
+        where o.success = 1;
+    </select>
+
+
+</mapper>

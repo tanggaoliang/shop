@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface CategoryMapper {
 
-    public int add(Category category);
+    int add(Category category);
 
-    public void delete(int id);
+    void delete(int id);
 
-    public Category get(int id);
+    Category get(int id);
 
-    public int update(Category category);
+    int update(Category category);
 
-    public List<Category> list();
+    List<Category> list();
 
 
 }

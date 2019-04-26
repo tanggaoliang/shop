@@ -1,5 +1,16 @@
 #main {
-    margin-left: -10%;
+    margin-left: 0%;
     width: 70%;
     float: left;
+}
+
+
+#left {
+    margin-left: 10%;
+    width: 10%;
+
+}
+
+#left button{
+    width: 60%;
 }

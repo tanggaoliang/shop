@@ -22,13 +22,12 @@
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <%--                <button type="button" classef="#" id="nav1">我的拼购</a>--%>
             </div>
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/home">我的拼购</a></li>
                     <li><a href="#">我的订单</a></li>
-                    <li><a href="#">购物车</a></li>
+                    <li><a href="/cart">购物车</a></li>
                     <li>
                         <a href="#">我的收藏</a>
                     </li>
@@ -56,7 +55,7 @@
         <button class="btn btn-success " onclick="location.href='/showCategory/2'">电脑</button>
         <button class="btn btn-info" onclick="location.href='/showCategory/3'">服装</button>
         <button class="btn btn-warning" onclick="location.href='/showCategory/4'">食品</button>
-        <button class="btn btn-danger" onclick="location.href='/showCategory/1'">图书</button>
+        <button class="btn btn-danger" onclick="location.href='/showCategory/5'">图书</button>
     </div>
 </div>
 
@@ -144,11 +143,11 @@
     <%--    </a>--%>
 
     <c:forEach items="${products}" var="product" varStatus="st">
-        <a href="#" class="product_a">
+        <a href="/detail/${product.id}" class="product_a">
             <div class="productDiv">
                 <div class="photo"><img src="/static/image/${product.fileName}.png"></div>
                 <div class=" name"><span>${product.name}</span></div>
-                <div class="price"><span>${product.price}</span></div>
+                <div class="price"><span>￥${product.price}</span></div>
             </div>
         </a>
     </c:forEach>
@@ -156,7 +155,7 @@
 
 </div>
 <%--<div id="footer"></div>--%>
-
+<%--导航栏运动js--%>
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {

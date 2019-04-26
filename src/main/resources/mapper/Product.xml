@@ -10,7 +10,7 @@
         <result column="fileName" property="fileName"/>
         <result column="price" property="price"/>
         <result column="info" property="info"/>
-        <association property="category" javaType="Category">
+        <association property="category" javaType="com.tang.pojo.Category">
             <id column="cid" property="id"/>
             <result column="cname" property="name"/>
         </association>
