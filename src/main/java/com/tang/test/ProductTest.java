@@ -6,9 +6,11 @@
  */
 package com.tang.test;
 
+import com.tang.mapper.OrderItemMapper;
 import com.tang.mapper.ProductMapper;
 import com.tang.pojo.Category;
 import com.tang.pojo.Product;
+import com.tang.service.OrderItemService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +23,12 @@ import java.util.List;
 @ContextConfiguration("classpath:applicationContext-transaction-full.xml")
 public class ProductTest {
     @Autowired
-    ProductMapper productMapper;
+    OrderItemMapper orderItemMapper;
 
     @Test
-    public void insert() {
-        List<Product> products = productMapper.listByCid(1);
-        for (Product product : products) {
-            System.out.println(product);
-        }
-
+    public void query() {
+        Integer num = orderItemMapper.ifInCart(1, 3);
+        System.out.println(num + "    " );
     }
 }
 

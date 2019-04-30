@@ -54,7 +54,7 @@
         <th>商品名称</th>
         <th>单价</th>
         <th>数量</th>
-        <th>删除</th>
+        <th>时间</th>
         </thead>
         <c:forEach items="${orderItems}" var="orderItem" varStatus="st">
             <!-- On cells (`td` or `th`) -->
@@ -65,16 +65,16 @@
                                           id="${orderItem.id}">￥${orderItem.product.price}</span></td>
                 <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"
                                            id="${orderItem.id}"></td>
-                <td class="danger"><a href="deleteOrderItem/${orderItem.id}">删除</a></td>
+                <td class="danger"><input type="text" value="${orderItem.time}"></td>
             </tr>
         </c:forEach>
         <tr>
-            <td colspan="3" align="right" class="info">
-                <input readonly="readonly" id="allTotalPrice" value="合计:￥${totalPrice}"/>
-            </td>
-            <td colspan="3" align="right" class="info">
-                <a href="/createOrder">结算</a>
-            </td>
+<%--            <td colspan="3" align="right" class="info">--%>
+<%--                <input readonly="readonly" id="allTotalPrice" value="合计:￥${totalPrice}"/>--%>
+<%--            </td>--%>
+<%--            <td colspan="3" align="right" class="info">--%>
+<%--                <a href="/createOrder">结算</a>--%>
+<%--            </td>--%>
         </tr>
     </table>
 
@@ -82,39 +82,6 @@
 <div id="right">
 
 </div>
-<script>
-    $(window).scroll(function () {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar-fixed-top").addClass("top-nav");
-        } else {
-            $(".navbar-fixed-top").removeClass("top-nav");
-        }
-    })
-    // 计算价格的js
-    //1.检测checkBox是否选中
-    //2.检测商品的数量是否改变
-    //3.商品数量的改变要提交到数据库
 
-    $('.productNumber').on("input", function () {
-        var totalPrice;
-        var id = $(this).attr("id");
-        var num = parseInt($(this).val());
-        var page = "/updateOrderItem";
-        $.ajax({
-            url: page,
-            async: false,
-            type: "GET",
-            dataType: 'json',
-            contentType: "application/json",
-            data: {"num": num, "id": id},
-            success: function (data) {
-                $("#allTotalPrice").val(data.totalPrice)
-                // alert("测试进入success方法");
-            }
-        });
-    });
-
-
-</script>
 </body>
 </html>

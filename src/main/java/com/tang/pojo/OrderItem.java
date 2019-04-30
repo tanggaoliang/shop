@@ -6,12 +6,26 @@
  */
 package com.tang.pojo;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class OrderItem {
     private int id;
     private User user;
     private Product product;
     private int num;
     private int success;
+    private String time;
+
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     @Override
     public String toString() {
@@ -22,6 +36,14 @@ public class OrderItem {
                 ", num=" + num +
                 ", success=" + success +
                 '}';
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getSuccess() {

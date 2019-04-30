@@ -65,6 +65,16 @@ public class ViewController {
         return "header";
     }
 
+    @RequestMapping("/info")
+    public String info() {
+        return "info";
+    }
+
+    @RequestMapping("/changePassword")
+    public String changePassword() {
+        return "changePassword";
+    }
+
     @RequestMapping("/detail")
     public String detail() {
         return "detail";

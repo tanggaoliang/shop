@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/home">我的拼购</a></li>
-                    <li><a href="#">我的订单</a></li>
+                    <li><a href="/order">我的订单</a></li>
                     <li><a href="/cart">购物车</a></li>
                     <li>
-                        <a href="#">我的收藏</a>
+                        <a href="/info">收货地址</a>
                     </li>
                     <li>
                         <div class="dropdown">
@@ -36,8 +36,8 @@
                             </button>
                             <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1"
                                 style="background: black">
-                                <li><a href="#"><span class="mySpan">信息</span></a></li>
-                                <li><a href="#"><span class="mySpan">切换</span></a></li>
+                                <li><a href="/changePassword"><span class="mySpan">改密</span></a></li>
+                                <li><a href="/"><span class="mySpan">切换</span></a></li>
                             </ul>
                         </div>
                     </li>
@@ -46,25 +46,36 @@
         </div>
     </nav>
 </div>
-<h1 align="center" style="color:green"> 购物车 </h1>
+<%--<h1 align="center" style="color:green"> 购物车 </h1>--%>
 <div id="main">
     <table class="table">
         <thead>
-        <th class="active">商品名称</th>
-        <th class="success">单价</th>
-        <th class="warning">数量</th>
-        <th class="danger">小计</th>
+        <%--        <th>选中</th>--%>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>数量</th>
+        <th>删除</th>
         </thead>
         <c:forEach items="${orderItems}" var="orderItem" varStatus="st">
             <!-- On cells (`td` or `th`) -->
             <tr>
+                    <%--                <td><input type="checkbox" class="myCheckbox"></td>--%>
                 <td class="active">${orderItem.product.name}</td>
-                <td class="success">${orderItem.product.price}</td>
-                <td class="warning">${orderItem.num}</td>
-                <td class="danger">${orderItem.product.price*orderItem.num}</td>
-                    <%--            <td class="info">...</td>--%>
+                <td class="success"><span class="productPrice"
+                                          id="${orderItem.id}">￥${orderItem.product.price}</span></td>
+                <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"
+                                           id="${orderItem.id}"></td>
+                <td class="danger"><a href="deleteOrderItem/${orderItem.id}">删除</a></td>
             </tr>
         </c:forEach>
+        <tr>
+            <td colspan="3" align="right" class="info">
+                <input readonly="readonly" id="allTotalPrice" value="合计:￥${totalPrice}"/>
+            </td>
+            <td colspan="3" align="right" class="info">
+                <a href="/createOrder">结算</a>
+            </td>
+        </tr>
     </table>
 
 </div>
@@ -78,6 +89,32 @@
         } else {
             $(".navbar-fixed-top").removeClass("top-nav");
         }
-    })</script>
+    })
+    // 计算价格的js
+    //1.检测checkBox是否选中
+    //2.检测商品的数量是否改变
+    //3.商品数量的改变要提交到数据库
+
+    $('.productNumber').on("input", function () {
+        var totalPrice;
+        var id = $(this).attr("id");
+        var num = parseInt($(this).val());
+        var page = "/updateOrderItem";
+        $.ajax({
+            url: page,
+            async: false,
+            type: "GET",
+            dataType: 'json',
+            contentType: "application/json",
+            data: {"num": num, "id": id},
+            success: function (data) {
+                $("#allTotalPrice").val(data.totalPrice)
+                // alert("测试进入success方法");
+            }
+        });
+    });
+
+
+</script>
 </body>
 </html>

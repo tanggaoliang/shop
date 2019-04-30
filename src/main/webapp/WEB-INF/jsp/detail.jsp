@@ -34,9 +34,10 @@
                                 ${user.userName}
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1" style="background: black">
-                                <li><a href="#"><span class="mySpan">信息</span></a></li>
-                                <li><a href="#"><span class="mySpan">切换</span></a></li>
+                            <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1"
+                                style="background: black">
+                                <li><a href="/info"><span class="mySpan">信息</span></a></li>
+                                <li><a href="/"><span class="mySpan">切换</span></a></li>
                             </ul>
                         </div>
                     </li>
@@ -51,13 +52,13 @@
 <div id="right">
     <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
     <div id="productPrice" class="info">产品价格 : <span>${product.price}</span></div>
-    <div id="productNumber" class="info">购买数量 : <input type="number" value="1"></div>
+    <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput"></div>
     <div id="buy" class="info">
-        <button type="button" class="btn btn-success">加入购物车</button>
-        <button type="button" class="btn btn-danger" id="buyNow">立即购买</button>
+        <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
+        <button type="button" class="btn btn-danger" id="buyNow">拼单购买</button>
     </div>
 </div>
-<div id="bottom"></div>
+<%--<div id="bottom"></div>--%>
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
@@ -65,6 +66,20 @@
         } else {
             $(".navbar-fixed-top").removeClass("top-nav");
         }
-    })</script>
+    })
+
+    <%--加入购物车功能--%>
+    $("#addToCart").click(function (event) {
+        var pid =${product.id};
+        var num = parseInt($('#productNumberInput').val());
+        var page = "/addProductToCart";
+        $.get(
+            page,
+            {"num": num, "pid": pid});
+    })
+
+</script>
+
+
 </body>
 </html>

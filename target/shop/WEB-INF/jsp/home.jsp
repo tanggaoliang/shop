@@ -26,10 +26,10 @@
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/home">我的拼购</a></li>
-                    <li><a href="#">我的订单</a></li>
+                    <li><a href="/order">我的订单</a></li>
                     <li><a href="/cart">购物车</a></li>
                     <li>
-                        <a href="#">我的收藏</a>
+                        <a href="/info">收货地址</a>
                     </li>
                     <li>
                         <div class="dropdown">
@@ -39,8 +39,8 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1" style="background: black">
-                                <li><a href="#"><span class="mySpan">信息</span></a></li>
-                                <li><a href="#"><span class="mySpan">切换</span></a></li>
+                                <li><a href="/changePassword"><span class="mySpan">改密</span></a></li>
+                                <li><a href="/"><span class="mySpan">切换</span></a></li>
                             </ul>
                         </div>
                     </li>

@@ -13,6 +13,7 @@ import com.tang.service.OrderItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,8 +28,8 @@ public class OrderItemServiceImpl implements OrderItemService {
     }
 
     @Override
-    public List<OrderItem> listByOrder() {
-        return orderItemMapper.listByOrder();
+    public List<OrderItem> listByOrder(int uid) {
+        return orderItemMapper.listByOrderAndUid(uid);
     }
 
     @Override
@@ -38,18 +39,33 @@ public class OrderItemServiceImpl implements OrderItemService {
     }
 
     @Override
+    public void createOrder(int uid) {
+        orderItemMapper.createOrder(uid);
+    }
+
+    @Override
     public void update(OrderItem c) {
         orderItemMapper.update(c);
     }
 
     @Override
-    public void delete(OrderItem c) {
-        orderItemMapper.delete(c.getId());
+    public void delete(int id) {
+        orderItemMapper.delete(id);
     }
 
     @Override
     public OrderItem get(int id) {
         return orderItemMapper.get(id);
+    }
+
+    @Override
+    public Integer ifInCart(int uid, int pid) {
+        return orderItemMapper.ifInCart(uid, pid);
+    }
+
+    @Override
+    public OrderItem getByUidAndPid(int uid, int pid) {
+        return orderItemMapper.getByUidAndPid(uid, pid);
     }
 
     @Override

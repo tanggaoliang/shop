@@ -1,16 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: Tanggl
-  Date: 2019/4/24
-  Time: 15:39
+  Date: 2019/4/30
+  Time: 13:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" isELIgnored="false" %>
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>商品详情页</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/detail.css">
+    <title>修改密码</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/changePassword.css">
 </head>
 <body>
 <div id="header">
@@ -25,11 +27,11 @@
                     <li><a href="#">我的订单</a></li>
                     <li><a href="/cart">购物车</a></li>
                     <li>
-                        <a href="#">我的收藏</a>
+                        <a href="/info">收货地址</a>
                     </li>
                     <li>
                         <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                            <button class="btn btn-default dropdown-toggle mydropdown" type="button" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 ${user.userName}
                                 <span class="caret"></span>
@@ -46,40 +48,29 @@
         </div>
     </nav>
 </div>
-<div id="left">
-    <img src="/static/image/${product.fileName}.png" alt="">
+<div id="outBox">
+    <form class="form-horizontal" action="/changePasswordAction" method="post">
+        <div class="main">
+            <div class="form-group">
+                <label for="password1" class="col-sm-2 control-label">输入密码:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password2" class="col-sm-2 control-label">确认密码:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" id="bottom1">修改密码</button>
+                </div>
+            </div>
+    </form>
+
 </div>
-<div id="right">
-    <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
-    <div id="productPrice" class="info">产品价格 : <span>${product.price}</span></div>
-    <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput"></div>
-    <div id="buy" class="info">
-        <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
-        <button type="button" class="btn btn-danger" id="buyNow">拼单购买</button>
-    </div>
 </div>
-<%--<div id="bottom"></div>--%>
-<script>
-    $(window).scroll(function () {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar-fixed-top").addClass("top-nav");
-        } else {
-            $(".navbar-fixed-top").removeClass("top-nav");
-        }
-    })
-
-    <%--加入购物车功能--%>
-    $("#addToCart").click(function (event) {
-        var pid =${product.id};
-        var num = parseInt($('#productNumberInput').val());
-        var page = "/addProductToCart";
-        $.get(
-            page,
-            {"num": num, "pid": pid});
-    })
-
-</script>
-
-
 </body>
 </html>

@@ -26,9 +26,9 @@
         where username = #{userName}
     </select>
 
-    <update id="update" parameterType="User">
+    <update id="update" parameterType="com.tang.pojo.User">
         update user
-        set username=#{name},
+        set username=#{userName},
             password=#{password},
             salt=#{salt}
         where id = #{id}

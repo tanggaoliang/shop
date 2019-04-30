@@ -7,8 +7,9 @@
     <resultMap id="orderItemBean" type="com.tang.pojo.OrderItem">
         <id column="oid" property="id"/>
         <result column="num" property="num"/>
+        <result column="time" property="time"/>
         <association property="product" javaType="com.tang.pojo.Product">
-            <id column="opid" property="id"/>
+            <id column="pid" property="id"/>
             <result column="name" property="name"/>
             <result column="price" property="price"/>
         </association>
@@ -17,19 +18,34 @@
 
     <insert id="add" parameterType="com.tang.pojo.OrderItem">
         insert into orderItem
-        values (null, #{user.id}, #{product.id}, #{num}, #{success})
+        values (null, #{user.id}, #{product.id}, #{num}, #{success}, null)
     </insert>
 
-    <delete id="delete" parameterType="com.tang.pojo.OrderItem">
+    <delete id="delete" parameterType="int">
         delete
         from orderItem
-        where id = #{id}
+        where id = #{0}
     </delete>
 
-    <select id="get" parameterType="_int" resultMap="orderItemBean">
+
+    <select id="get" parameterType="_int" resultType="com.tang.pojo.OrderItem">
         select *
         from orderItem
         where id = #{id}
+    </select>
+    <select id="ifInCart" resultType="int">
+        select id
+        from orderItem
+        where uid = #{0}
+          and pid = #{1}
+          and success = 0;
+    </select>
+    <select id="getByUidAndPid" resultType="com.tang.pojo.OrderItem">
+        select *
+        from orderItem
+        where uid = #{0}
+          and pid = #{1}
+          and success = 0;
     </select>
 
     <select id="listByCartByUid" parameterType="_int" resultMap="orderItemBean">
@@ -46,6 +62,11 @@
             success=#{success}
         where id = #{id}
     </update>
+    <update id="createOrder" parameterType="int">
+        update orderItem
+        set success=1
+        where uid = #{uid}
+    </update>
 
     <select id="listByCart" resultMap="orderItemBean">
         select o.*, p.*, o.id oid, p.id pid
@@ -54,11 +75,12 @@
         where o.success = 0;
     </select>
 
-    <select id="listByOrder" resultMap="orderItemBean">
+    <select id="listByOrderAndUid" parameterType="int" resultMap="orderItemBean">
         select o.*, p.*, o.id oid, p.id pid
         from orderitem o
                  left join product p on o.pid = p.Id
-        where o.success = 1;
+        where o.success = 1
+          and o.uid = #{0}
     </select>
 
 

@@ -8,23 +8,30 @@ package com.tang.mapper;
 
 import com.tang.pojo.OrderItem;
 
+import java.util.Date;
 import java.util.List;
 
- public interface OrderItemMapper {
-     int add(OrderItem orderItem);
+public interface OrderItemMapper {
 
-     void delete(int id);
+    int add(OrderItem orderItem);
 
-     OrderItem get(int id);
+    void delete(int id);
 
-     List<OrderItem> listByCartByUid(int uid);
+    void createOrder(int uid);
 
-     int update(OrderItem orderItem);
+    OrderItem get(int id);
 
-     List<OrderItem> listByCart();
+    Integer ifInCart(int uid, int pid);
 
+    OrderItem getByUidAndPid(int uid, int pid);
 
-     List<OrderItem> listByOrder();
+    List<OrderItem> listByCartByUid(int uid);
+
+    int update(OrderItem orderItem);
+
+    List<OrderItem> listByCart();
+
+    List<OrderItem> listByOrderAndUid(int uid);
 
 
 }
