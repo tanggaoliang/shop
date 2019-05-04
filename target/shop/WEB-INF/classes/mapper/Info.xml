@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tang.mapper.InfoMapper">
+
+    <insert id="add" parameterType="com.tang.pojo.Info">
+        insert into info
+        values (null, #{uid}, #{name}, #{phoneNumber}, #{address}, #{selected})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete
+        from info
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="com.tang.pojo.Info">
+        select *
+        from info
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.tang.pojo.Info">
+        update info
+        set name=#{name},
+            phoneNumber=#{phoneNumber},
+            address=#{address},
+            selected=#{selected}
+        where id = #{id}
+    </update>
+    <select id="list" resultType="com.tang.pojo.Info" parameterType="_int">
+        select *
+        from info
+        where uid = #{uid}
+        order by selected desc
+    </select>
+
+    <update id="defaultAddress" parameterType="int">
+        update info
+        set selected=0
+        where uid = #{uid}
+    </update>
+</mapper>

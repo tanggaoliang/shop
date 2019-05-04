@@ -81,6 +81,7 @@
                  left join product p on o.pid = p.Id
         where o.success = 1
           and o.uid = #{0}
+        order by o.time desc
     </select>
 
 

@@ -65,14 +65,15 @@ public class ViewController {
         return "header";
     }
 
-    @RequestMapping("/info")
-    public String info() {
-        return "info";
-    }
 
     @RequestMapping("/changePassword")
     public String changePassword() {
         return "changePassword";
+    }
+
+    @RequestMapping("/addInfo")
+    public String addInfo() {
+        return "addInfo";
     }
 
     @RequestMapping("/detail")

@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>收货地址列表</title>
+    <title>购物车</title>
     <link rel="stylesheet" type="text/css" href="/static/css/cart.css">
 </head>
 <body>
@@ -46,32 +46,42 @@
         </div>
     </nav>
 </div>
-<h1 align="center" style="color:green"> 最上面的收货地址为默认地址 </h1>
+<%--<h1 align="center" style="color:green"> 购物车 </h1>--%>
 <div id="main">
     <table class="table">
         <thead>
         <%--        <th>选中</th>--%>
-        <th>收货人</th>
-        <th>手机号码</th>
-        <th>收货地址</th>
-        <th>编辑</th>
-        <th>删除</th>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>数量</th>
+        <th>时间</th>
         </thead>
-        <c:forEach items="${infoList}" var="info" varStatus="st">
+        <c:forEach items="${orderItems}" var="orderItem" varStatus="st">
+            <!-- On cells (`td` or `th`) -->
             <tr>
-                <td class="active">${info.name}</td>
-                <td class="success"><span>${info.phoneNumber}</span></td>
-                <td class="warning"><span>${info.address}</span></td>
-                <td class="danger"><a href="editInfo/${info.id}">编辑</a></td>
-                <td class="info"><a href="deleteInfo/${info.id}">删除</a></td>
+                    <%--                <td><input type="checkbox" class="myCheckbox"></td>--%>
+                <td class="active">${orderItem.product.name}</td>
+                <td class="success"><span class="productPrice"
+                                          id="${orderItem.id}">￥${orderItem.product.price}</span></td>
+                <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"
+                                           id="${orderItem.id}"></td>
+                <td class="danger"><input type="text" value="${orderItem.time}"></td>
             </tr>
         </c:forEach>
         <tr>
-            <td colspan="3" align="center" class="info">
-                <a href="addInfo/${info.id}">添加收货地址</a>
-            </td>
-
+<%--            <td colspan="3" align="right" class="info">--%>
+<%--                <input readonly="readonly" id="allTotalPrice" value="合计:￥${totalPrice}"/>--%>
+<%--            </td>--%>
+<%--            <td colspan="3" align="right" class="info">--%>
+<%--                <a href="/createOrder">结算</a>--%>
+<%--            </td>--%>
         </tr>
     </table>
 
 </div>
+<div id="right">
+
+</div>
+
+</body>
+</html>

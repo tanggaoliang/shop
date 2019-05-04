@@ -6,25 +6,29 @@
  */
 package com.tang.controller;
 
+import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import com.tang.mapper.ProductMapper;
+import com.tang.pojo.Info;
 import com.tang.pojo.OrderItem;
 import com.tang.pojo.Product;
 import com.tang.pojo.User;
+import com.tang.service.InfoService;
 import com.tang.service.OrderItemService;
 import com.tang.service.UserService;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +41,8 @@ public class MyController {
     private ProductMapper productService;
     @Autowired
     private OrderItemService orderItemService;
+    @Autowired
+    private InfoService infoService;
 
     @RequestMapping(value = "/showCategory/{cid}")
     public ModelAndView showCategory(@PathVariable("cid") int cid) {
@@ -113,7 +119,7 @@ public class MyController {
         for (OrderItem orderItem1 : orderItems) {
             totalPrice += orderItem1.getNum() * orderItem1.getProduct().getPrice();
         }
-        Map map = new HashMap();
+        Map map = new HashMap(1);
         map.put("totalPrice", "合计:￥" + totalPrice);
         return map;
     }
@@ -146,6 +152,19 @@ public class MyController {
         return "success";
     }
 
+    @RequestMapping("/createSingleOrder")
+    public String createSingleOrder(HttpSession session, @RequestParam("productId") int productId, @RequestParam("productNumberInput") int productNumberInput) {
+        User user = (User) session.getAttribute("user");
+        OrderItem orderItem = new OrderItem();
+        orderItem.setUser(user);
+        orderItem.setProduct(productService.get(productId));
+        orderItem.setNum(productNumberInput);
+        orderItem.setSuccess(1);
+        orderItemService.add(orderItem);
+        return "success";
+
+    }
+
     @RequestMapping("/order")
     public ModelAndView order(HttpSession session) {
         User user = (User) session.getAttribute("user");
@@ -155,4 +174,70 @@ public class MyController {
         modelAndView.addObject("orderItems", orderItems);
         return modelAndView;
     }
+
+    @RequestMapping("/addInfoAction")
+    public String addInfo(@RequestParam("userName") String userName, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("province") String province, @RequestParam("city") String city, @RequestParam("county") String county, @RequestParam("address") String address,
+
+                        HttpServletRequest request, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        int uid = user.getId();
+        Info info = new Info();
+        info.setUid(uid);
+        info.setName(userName);
+        info.setPhoneNumber(phoneNumber);
+        info.setAddress(province + city + county + address);
+        if (request.getParameter("checkbox") != null) {
+            infoService.defaultAddress(uid);
+            info.setSelected(1);
+        } else {
+            info.setSelected(0);
+        }
+        infoService.add(info);
+        return "redirect:/info";
+    }
+
+    @RequestMapping("/info")
+    public ModelAndView info(HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        List<Info> infoList = infoService.list(user.getId());
+        ModelAndView modelAndView = new ModelAndView("info");
+        modelAndView.addObject("infoList", infoList);
+        return modelAndView;
+    }
+
+    @RequestMapping("/deleteInfo/{id}")
+    public ModelAndView deleteInfo(@PathVariable("id") int id) {
+        infoService.delete(id);
+        return new ModelAndView("redirect:/info");
+    }
+
+    @RequestMapping("/editInfo/{id}")
+    public ModelAndView editInfo(HttpSession session, @PathVariable("id") int id) {
+        Info info = infoService.get(id);
+        ModelAndView modelAndView = new ModelAndView("updateInfo");
+        modelAndView.addObject("info", info);
+        return modelAndView;
+    }
+
+    @RequestMapping("/updateInfoAction")
+    public ModelAndView updateInfo(@RequestParam("id") int id, @RequestParam("userName") String userName, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address,
+                                   HttpServletRequest request, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        int uid = user.getId();
+        Info info = new Info();
+        info.setId(id);
+        info.setUid(uid);
+        info.setName(userName);
+        info.setPhoneNumber(phoneNumber);
+        info.setAddress(address);
+        if (request.getParameter("checkbox") != null) {
+            infoService.defaultAddress(uid);
+            info.setSelected(1);
+        } else {
+            info.setSelected(0);
+        }
+        infoService.update(info);
+        return new ModelAndView("redirect:/info");
+    }
+
 }

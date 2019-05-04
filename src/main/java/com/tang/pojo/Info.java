@@ -6,14 +6,21 @@
  */
 package com.tang.pojo;
 
-/**
- * sex 0 for man 1 for woman
- * default 1 for default
- */
+
 public class Info {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private int uid;
     private String name;
-    private int phoneNumber;
+    private String phoneNumber;
     private String address;
     private int selected;
 
@@ -41,11 +48,11 @@ public class Info {
         this.name = name;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
