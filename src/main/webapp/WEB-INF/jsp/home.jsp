@@ -73,37 +73,37 @@
             <div class="Cooldog_content">
                 <ul>
                     <li class="p1">
-                        <a href="#">
+                        <a href="/detail/17">
                             <img src="/static/image/1.png" alt="">
                         </a>
                     </li>
                     <li class="p2">
-                        <a href="#">
+                        <a href="/detail/24">
                             <img src="/static/image/2.png" alt="">
                         </a>
                     </li>
                     <li class="p3">
-                        <a href="#">
+                        <a href="/detail/25">
                             <img src="/static/image/3.png" alt="">
                         </a>
                     </li>
                     <li class="p4">
-                        <a href="#">
+                        <a href="/detail/2">
                             <img src="/static/image/4.png" alt="">
                         </a>
                     </li>
                     <li class="p5">
-                        <a href="#">
+                        <a href="/detail/1">
                             <img src="/static/image/5.png" alt="">
                         </a>
                     </li>
                     <li class="p5">
-                        <a href="#">
+                        <a href="/detail/3">
                             <img src="/static/image/6.png" alt="">
                         </a>
                     </li>
                     <li class="p5">
-                        <a href="#">
+                        <a href="/detail/21">
                             <img src="/static/image/7.png" alt="">
                         </a>
                     </li>

@@ -17,8 +17,8 @@
 
 
     <insert id="add" parameterType="com.tang.pojo.OrderItem">
-        insert into orderItem
-        values (null, #{user.id}, #{product.id}, #{num}, #{success}, null)
+        insert into orderItem(id, uid, pid, num, success)
+        values (null, #{user.id}, #{product.id}, #{num}, #{success})
     </insert>
 
     <delete id="delete" parameterType="int">
