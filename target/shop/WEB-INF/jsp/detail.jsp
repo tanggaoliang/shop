@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/home">我的拼购</a></li>
-                    <li><a href="#">我的订单</a></li>
+                    <li><a href="/order">我的订单</a></li>
                     <li><a href="/cart">购物车</a></li>
                     <li>
                         <a href="#">我的收藏</a>
@@ -53,7 +53,7 @@
     <form action="/createSingleOrder">
         <input type="hidden" name="productId" value="${product.id}">
         <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
-        <div id="productPrice" class="info">产品价格 : <span>${product.price}</span></div>
+        <div id="productPrice" class="info">产品价格 :￥<span>${product.price}</span></div>
         <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput" name="productNumberInput"></div>
         <div id="buy" class="info">
             <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
