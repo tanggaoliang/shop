@@ -16,8 +16,7 @@ public interface UserMapper {
 
     public int update(User User);
 
-    public List<User> list();
-
+    public List<User> list(int rid);
 
     public int total();
 

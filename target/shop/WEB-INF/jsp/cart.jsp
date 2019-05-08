@@ -14,6 +14,7 @@
 </head>
 <body>
 <div id="header">
+
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -46,7 +47,7 @@
         </div>
     </nav>
 </div>
-<%--<h1 align="center" style="color:green"> 购物车 </h1>--%>
+<h1 align="center" style="color:green"> 我的购物车 </h1>
 <div id="main">
     <table class="table">
         <thead>

@@ -21,8 +21,8 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Override
-    public List<User> list() {
-        return userMapper.list();
+    public List<User> list(int rid) {
+        return userMapper.list(rid);
     }
 
     @Override
@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(User c) {
-        userMapper.delete(c.getId());
+    public void delete(int id) {
+        userMapper.delete(id);
     }
 
     @Override

@@ -5,6 +5,4 @@
 <script type="text/javascript" src="/static/bootstrap/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
 
-<c:if test="${null!=errorInfo}">
-    <h1 align="center" style="color:red">错误信息:${errorInfo}</h1>
-</c:if>
+

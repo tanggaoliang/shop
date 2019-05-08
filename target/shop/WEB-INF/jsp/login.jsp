@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/static/css/login.css">
 </head>
 <body>
+<c:if test="${null!=errorInfo}">
+    <h1 align="center" style="color:red">错误信息:${errorInfo}</h1>
+</c:if>
 <h1 align="center" id="title">拼购网登录</h1>
 <div id="outBox">
     <div class="main">
@@ -29,15 +32,6 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="password">
                 </div>
             </div>
-            <%--            <div class="form-group">--%>
-            <%--                <div class="col-sm-offset-2 col-sm-10">--%>
-            <%--                    <div class="checkbox">--%>
-            <%--                        <label>--%>
-            <%--                            <input type="checkbox" id="rememberPassword"> 记住我--%>
-            <%--                        </label>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" id="login">登录</button>
@@ -48,6 +42,8 @@
             </div>
         </form>
     </div>
+
+
 </div>
 </body>
 </html>

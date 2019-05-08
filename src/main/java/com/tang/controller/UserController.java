@@ -11,6 +11,7 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,71 +27,107 @@ public class UserController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping("listUser")
-    public ModelAndView listUser(Page page) {
-        ModelAndView mav = new ModelAndView("listUser");
-        PageHelper.offsetPage(page.getStart(), 5);
-        List<User> cs = userService.list();
-        int total = (int) new PageInfo<>(cs).getTotal();
-        page.calculateLast(total);
-
-        // 放入转发参数
-        mav.addObject("cs", cs);
-        System.out.println(mav);
-        // 放入jsp路径
-
-        return mav;
-    }
 
     @RequestMapping("addUser")
     public ModelAndView addUser(@RequestParam("userName") String userName, @RequestParam("password1") String password1, @RequestParam("password2") String password2) {
-        String errInfo;
-        userName = userName.trim();
-        if (null != userService.getByUserName(userName)) {
-            errInfo = "用户名已存在";
+        //是否返回注册
+        String errInfo = getErrorInfo(userName, password1, password2);
+        if (errInfo != "") {
             ModelAndView mav = new ModelAndView("/register");
             mav.addObject("errorInfo", errInfo);
-            return mav;
-        } else if (!password1.equals(password2)) {
-            errInfo = "两次密码不一致";
-            ModelAndView mav = new ModelAndView("/register");
-            mav.addObject("errorInfo", errInfo);
-            return mav;
-        } else {
-            String salt = new SecureRandomNumberGenerator().nextBytes().toString();
-            int times = 2;
-            String algorithmName = "md5";
-            String encodedPassword = new SimpleHash(algorithmName, password1, salt, times).toString();
-            User user = new User();
-            user.setUserName(userName);
-            user.setPassword(encodedPassword);
-            user.setSalt(salt);
-            userService.add(user);
-            ModelAndView mav = new ModelAndView("redirect:/");
             return mav;
         }
-    }
-
-    @RequestMapping("deleteUser")
-    public ModelAndView deleteUser(User user) {
-        userService.delete(user);
-        ModelAndView mav = new ModelAndView("redirect:/listUser");
+        User user = getUser(userName, password1);
+        userService.add(user);
+        ModelAndView mav = new ModelAndView("redirect:/");
         return mav;
     }
 
-    @RequestMapping("editUser")
-    public ModelAndView editUser(User user) {
-        User c = userService.get(user.getId());
-        ModelAndView mav = new ModelAndView("editUser");
-        mav.addObject("c", c);
+    private User getUser(@RequestParam("userName") String userName, @RequestParam("password1") String password1) {
+        String salt = new SecureRandomNumberGenerator().nextBytes().toString();
+        int times = 2;
+        String algorithmName = "md5";
+        String encodedPassword = new SimpleHash(algorithmName, password1, salt, times).toString();
+        User user = new User();
+        user.setUserName(userName);
+        user.setPassword(encodedPassword);
+        user.setSalt(salt);
+        return user;
+    }
+
+
+    @RequestMapping("adminAddUserAction/{rid}")
+    public ModelAndView adminAddUser(@RequestParam("userName") String userName, @RequestParam("password1") String password1, @RequestParam("password2") String password2,
+                                     @PathVariable("rid") int rid) {
+        String errInfo = getErrorInfo(userName, password1, password2);
+        if (errInfo != "") {
+            ModelAndView mav = new ModelAndView("manageAddUser");
+            mav.addObject("errorInfo", errInfo);
+            return mav;
+        }
+        User user = getUser(userName, password1);
+        user.setRid(rid);
+        userService.add(user);
+        ModelAndView modelAndView = new ModelAndView("redirect:/manageUser/" + rid);
+        return modelAndView;
+    }
+
+    private String getErrorInfo(@RequestParam("userName") String userName, @RequestParam("password1") String password1, @RequestParam("password2") String password2) {
+        String errInfo = "";
+        //是否返回注册
+        userName = userName.trim();
+        if (userName == "" || password1 == "" || password2 == "") {
+            errInfo = "用户名或密码不能为空";
+        } else if (null != userService.getByUserName(userName)) {
+            errInfo = "用户名已存在";
+        } else if (!password1.equals(password2)) {
+            errInfo = "两次密码不一致";
+
+        }
+        return errInfo;
+    }
+
+
+    @RequestMapping("deleteUser/{id}")
+    public ModelAndView deleteUser(@PathVariable("id") int id, HttpSession session) {
+        userService.delete(id);
+        int rid = (int) session.getAttribute("rid");
+        ModelAndView mav = new ModelAndView("redirect:/manageUser/" + rid);
+        return mav;
+    }
+
+
+    @RequestMapping("editUser/{id}")
+    public ModelAndView editUser(@PathVariable("id") int id) {
+        User user = userService.get(id);
+        ModelAndView mav = new ModelAndView("manageEditUser");
+        mav.addObject("user", user);
         return mav;
     }
 
     @RequestMapping("updateUser")
-    public ModelAndView updateUser(User user) {
-        userService.update(user);
-        ModelAndView mav = new ModelAndView("redirect:/listUser");
-        return mav;
+    public ModelAndView updateUser(@RequestParam("id") int id, @RequestParam("password1") String password1, @RequestParam("password2") String password2, HttpSession session) {
+        if (password1.equals(password2)) {
+            User user = userService.get(id);
+            user = encryption(user, password1);
+            userService.update(user);
+            return new ModelAndView("redirect:/manageUser/1");
+        } else {
+            ModelAndView modelAndView = new ModelAndView("redirect:/editUser/" + id);
+            session.setAttribute("errorInfo", "两次密码不一致,请重新输入!");
+            return modelAndView;
+        }
+
+    }
+
+    private User encryption(User user, String password1) {
+        String salt = new SecureRandomNumberGenerator().nextBytes().toString();
+        int times = 2;
+        String algorithmName = "md5";
+        String encodedPassword = new SimpleHash(algorithmName, password1, salt, times).toString();
+        user.setPassword(encodedPassword);
+        user.setSalt(salt);
+        return user;
     }
 
     @RequestMapping("loginAction")
@@ -102,14 +139,26 @@ public class UserController {
             String passwordEncoded = new SimpleHash("md5", password, salt, 2).toString();
             if (passwordEncoded.equals(passwordInDB)) {
                 session.setAttribute("user", user);
-
-                List<Product> products = productService.listByCid(1);
-                for (Product product : products) {
-                    System.out.println(product);
+                // 2是管理员用户
+                if (user.getRid() == 1) {
+                    List<Product> products = productService.listByCid(1);
+                    session.setAttribute("products", products);
+                    ModelAndView modelAndView = new ModelAndView("redirect:/home");
+                    return modelAndView;
+                } else {
+                    List<Product> products1 = productService.listByCid(1);
+                    session.setAttribute("products1", products1);
+                    List<Product> products2 = productService.listByCid(2);
+                    session.setAttribute("products2", products2);
+                    List<Product> products3 = productService.listByCid(3);
+                    session.setAttribute("products3", products3);
+                    List<Product> products4 = productService.listByCid(4);
+                    session.setAttribute("products4", products4);
+                    List<Product> products5 = productService.listByCid(5);
+                    session.setAttribute("products5", products5);
+                    ModelAndView modelAndView = new ModelAndView("redirect:/manage");
+                    return modelAndView;
                 }
-                session.setAttribute("products",products);
-                ModelAndView modelAndView = new ModelAndView("redirect:/home");
-                return modelAndView;
             }
         }
         ModelAndView modelAndView = new ModelAndView("redirect:/");

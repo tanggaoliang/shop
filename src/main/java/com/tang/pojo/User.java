@@ -12,6 +12,15 @@ public class User {
     private String userName;
     private String password;
     private String Salt;
+    private int rid = 1;
+
+    public int getRid() {
+        return rid;
+    }
+
+    public void setRid(int rid) {
+        this.rid = rid;
+    }
 
     public Integer getId() {
         return id;

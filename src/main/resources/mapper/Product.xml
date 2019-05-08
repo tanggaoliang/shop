@@ -35,7 +35,10 @@
 
     <update id="update" parameterType="com.tang.pojo.Product">
         update product
-        set name=#{name}
+        set name=#{name},
+            fileName=#{fileName},
+            price=#{price},
+            info=#{info}
         where id = #{id}
     </update>
     <select id="listByCid" parameterType="_int" resultMap="productBean">

@@ -68,7 +68,7 @@
     <c:forEach items="${products}" var="product" varStatus="st">
         <a href="/detail/${product.id}" class="product_a">
             <div class="productDiv">
-                <div class="photo"><img src="/static/image/${product.fileName}.png"></div>
+                <div class="photo"><img src="/static/image/${product.fileName}"></div>
                 <div class=" name"><span>${product.name}</span></div>
                 <div class="price"><span>￥${product.price}</span></div>
             </div>

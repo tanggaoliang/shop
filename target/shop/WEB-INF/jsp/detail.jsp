@@ -47,7 +47,7 @@
     </nav>
 </div>
 <div id="left">
-    <img src="/static/image/${product.fileName}.png" alt="">
+    <img src="/static/image/${product.fileName}" alt="">
 </div>
 <div id="right">
     <form action="/createSingleOrder">

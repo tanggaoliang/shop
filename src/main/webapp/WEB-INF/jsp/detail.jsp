@@ -47,14 +47,15 @@
     </nav>
 </div>
 <div id="left">
-    <img src="/static/image/${product.fileName}.png" alt="">
+    <img src="${product.fileName}" alt="">
 </div>
 <div id="right">
     <form action="/createSingleOrder">
         <input type="hidden" name="productId" value="${product.id}">
         <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
         <div id="productPrice" class="info">产品价格 :￥<span>${product.price}</span></div>
-        <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput" name="productNumberInput"></div>
+        <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput"
+                                                           name="productNumberInput"></div>
         <div id="buy" class="info">
             <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
             <button type="submit" class="btn btn-danger" id="buyNow">拼单购买</button>

@@ -9,10 +9,11 @@
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>购物车</title>
+    <title>我的订单</title>
     <link rel="stylesheet" type="text/css" href="/static/css/cart.css">
 </head>
 <body>
+
 <div id="header">
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
@@ -46,7 +47,7 @@
         </div>
     </nav>
 </div>
-<%--<h1 align="center" style="color:green"> 购物车 </h1>--%>
+<h1 align="center" style="color:green"> 我的订单 </h1>
 <div id="main">
     <table class="table">
         <thead>
@@ -69,12 +70,6 @@
             </tr>
         </c:forEach>
         <tr>
-<%--            <td colspan="3" align="right" class="info">--%>
-<%--                <input readonly="readonly" id="allTotalPrice" value="合计:￥${totalPrice}"/>--%>
-<%--            </td>--%>
-<%--            <td colspan="3" align="right" class="info">--%>
-<%--                <a href="/createOrder">结算</a>--%>
-<%--            </td>--%>
         </tr>
     </table>
 

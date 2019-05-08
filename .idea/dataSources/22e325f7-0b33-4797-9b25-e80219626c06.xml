@@ -1112,9 +1112,9 @@
     </collation>
     <table id="279" parent="6" name="category"/>
     <table id="280" parent="6" name="info"/>
-    <table id="281" parent="6" name="order"/>
-    <table id="282" parent="6" name="orderitem"/>
-    <table id="283" parent="6" name="product"/>
+    <table id="281" parent="6" name="orderitem"/>
+    <table id="282" parent="6" name="product"/>
+    <table id="283" parent="6" name="role"/>
     <table id="284" parent="6" name="user"/>
     <column id="285" parent="279" name="id">
       <Position>1</Position>
@@ -1156,9 +1156,9 @@
     </column>
     <column id="291" parent="280" name="phoneNumber">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="292" parent="280" name="address">
@@ -1175,195 +1175,215 @@
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="280" name="PRIMARY">
+    <index id="294" parent="280" name="info_ibfk_1">
+      <ColNames>uid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="295" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="295" parent="280" name="info_ibfk_1">
-      <ColNames>id</ColNames>
+    <foreign-key id="296" parent="280" name="info_ibfk_1">
+      <ColNames>uid</ColNames>
       <RefSchemaName>shop2</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="296" parent="281" name="Id">
+    <column id="297" parent="281" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="281" name="uid">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="298" parent="281" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="299" parent="282" name="Id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="300" parent="282" name="uid">
+    <column id="298" parent="281" name="uid">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="282" name="pid">
+    <column id="299" parent="281" name="pid">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="282" name="num">
+    <column id="300" parent="281" name="num">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="282" name="success">
+    <column id="301" parent="281" name="success">
       <Position>5</Position>
       <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="282" name="time">
+    <column id="302" parent="281" name="time">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
-    <index id="305" parent="282" name="uid">
+    <index id="303" parent="281" name="uid">
       <ColNames>uid</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="306" parent="282" name="fk2">
+    <index id="304" parent="281" name="fk2">
       <ColNames>pid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="307" parent="282" name="PRIMARY">
+    <key id="305" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="308" parent="282" name="orderitem_ibfk_1">
+    <foreign-key id="306" parent="281" name="orderitem_ibfk_1">
       <ColNames>uid</ColNames>
       <RefSchemaName>shop2</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <foreign-key id="309" parent="282" name="fk2">
+    <foreign-key id="307" parent="281" name="fk2">
       <ColNames>pid</ColNames>
       <RefSchemaName>shop2</RefSchemaName>
       <RefTableName>product</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="310" parent="283" name="Id">
+    <column id="308" parent="282" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="283" name="name">
+    <column id="309" parent="282" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="283" name="fileName">
+    <column id="310" parent="282" name="fileName">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="283" name="price">
+    <column id="311" parent="282" name="price">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="283" name="info">
+    <column id="312" parent="282" name="info">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;this is info&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="283" name="cid">
+    <column id="313" parent="282" name="cid">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
+      <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="316" parent="283" name="cid">
+    <index id="314" parent="282" name="cid">
       <ColNames>cid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="317" parent="283" name="PRIMARY">
+    <key id="315" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="318" parent="283" name="product_ibfk_1">
+    <foreign-key id="316" parent="282" name="product_ibfk_1">
       <ColNames>cid</ColNames>
       <RefSchemaName>shop2</RefSchemaName>
       <RefTableName>category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="319" parent="284" name="Id">
+    <column id="317" parent="283" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="284" name="username">
+    <column id="318" parent="283" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="284" name="password">
-      <Position>3</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="322" parent="284" name="salt">
-      <Position>4</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="323" parent="284" name="username">
-      <ColNames>username</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="324" parent="284" name="PRIMARY">
+    <key id="319" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="325" parent="284" name="username">
+    <column id="320" parent="284" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="321" parent="284" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="322" parent="284" name="password">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="323" parent="284" name="salt">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="324" parent="284" name="rid">
+      <Position>5</Position>
+      <Comment>角色</Comment>
+      <DataType>int(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="325" parent="284" name="username">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="326" parent="284" name="rid">
+      <ColNames>rid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="327" parent="284" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="328" parent="284" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
+    <foreign-key id="329" parent="284" name="user_ibfk_1">
+      <ColNames>rid</ColNames>
+      <RefSchemaName>shop2</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

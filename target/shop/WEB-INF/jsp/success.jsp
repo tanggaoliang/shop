@@ -46,6 +46,8 @@
         </div>
     </nav>
 </div>
-<h1 align="center" style="color:green"> 您已支付成功! </h1>
+<h1></h1>
+<div><img src="/static/image/alipay.png" alt="" style="margin: 0 33%"></div>
+<h1 align="center" style="color:green"><a href="/order">查看订单</a></h1>
 </body>
 </html>

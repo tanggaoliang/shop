@@ -6,7 +6,7 @@
 <mapper namespace="com.tang.mapper.UserMapper">
     <insert id="add" parameterType="User">
         insert into user
-        values (null, #{userName}, #{password}, #{salt})
+        values (null, #{userName}, #{password}, #{salt}, #{rid})
     </insert>
 
     <delete id="delete" parameterType="User">
@@ -33,8 +33,9 @@
             salt=#{salt}
         where id = #{id}
     </update>
-    <select id="list" resultType="User">
+    <select id="list" resultType="User" parameterType="int">
         select *
         from user
+        where rid = #{0}
     </select>
 </mapper>

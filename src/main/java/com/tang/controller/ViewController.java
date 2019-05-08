@@ -7,6 +7,7 @@
 package com.tang.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,10 +20,6 @@ public class ViewController {
         return "login";
     }
 
-    @RequestMapping("/upload")
-    public String upload() {
-        return "upload";
-    }
 
     @RequestMapping("/register")
     public String register() {
@@ -91,6 +88,18 @@ public class ViewController {
         session.setAttribute("count", i);
         ModelAndView modelAndView = new ModelAndView("check");
 
+        return modelAndView;
+    }
+
+    @RequestMapping("/manage")
+    public String manage() {
+        return "manage";
+    }
+
+    @RequestMapping("/adminAddUser/{rid}")
+    public ModelAndView adminAddUser(@PathVariable("rid") int rid) {
+        ModelAndView modelAndView = new ModelAndView("manageAddUser");
+        modelAndView.addObject("rid", rid);
         return modelAndView;
     }
 

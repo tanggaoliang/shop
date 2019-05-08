@@ -23,12 +23,18 @@ import java.util.List;
 @ContextConfiguration("classpath:applicationContext-transaction-full.xml")
 public class ProductTest {
     @Autowired
-    OrderItemMapper orderItemMapper;
+    ProductMapper productMapper;
 
     @Test
     public void query() {
-        Integer num = orderItemMapper.ifInCart(1, 3);
-        System.out.println(num + "    " );
+        for (int i = 1; i <= 38; i++) {
+            Product product = productMapper.get(i);
+            if (product != null) {
+                String newName = "/static/image/" + product.getFileName();
+                product.setFileName(newName);
+            }
+            productMapper.update(product);
+        }
     }
 }
 

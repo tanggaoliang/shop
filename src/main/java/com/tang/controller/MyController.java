@@ -7,13 +7,11 @@
 package com.tang.controller;
 
 import com.tang.mapper.ProductMapper;
-import com.tang.pojo.Info;
-import com.tang.pojo.OrderItem;
-import com.tang.pojo.Product;
-import com.tang.pojo.User;
+import com.tang.pojo.*;
 import com.tang.service.InfoService;
 import com.tang.service.OrderItemService;
 import com.tang.service.UserService;
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +49,14 @@ public class MyController {
         return mav;
     }
 
+    @RequestMapping(value = "/manageEditProduct/{id}")
+    public ModelAndView manageEditProduct(@PathVariable("id") int id) {
+        ModelAndView mav = new ModelAndView("manageEditProduct");
+        Product product = productService.get(id);
+        mav.addObject("product", product);
+        return mav;
+    }
+
     @RequestMapping(value = "/detail/{id}")
     public ModelAndView productDetail(@PathVariable("id") int id) {
         ModelAndView mav = new ModelAndView("detail");
@@ -56,6 +64,7 @@ public class MyController {
         mav.addObject("product", product);
         return mav;
     }
+
 
     @RequestMapping(value = "/search")
     public ModelAndView showCategory(@RequestParam("name") String name) {
@@ -69,14 +78,19 @@ public class MyController {
     public ModelAndView showCart(HttpSession session) {
         User user = (User) session.getAttribute("user");
         List<OrderItem> orderItems = orderItemService.listByCartByUid(user.getId());
-        int totalPrice = 0;
-        for (OrderItem orderItem : orderItems) {
-            totalPrice += orderItem.getNum() * orderItem.getProduct().getPrice();
-        }
+        int totalPrice = getTotalPrice(orderItems);
         ModelAndView mav = new ModelAndView("cart");
         mav.addObject("orderItems", orderItems);
         mav.addObject("totalPrice", totalPrice);
         return mav;
+    }
+
+    private int getTotalPrice(List<OrderItem> orderItems) {
+        int totalPrice = 0;
+        for (OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getNum() * orderItem.getProduct().getPrice();
+        }
+        return totalPrice;
     }
 
     @RequestMapping(value = "/addProductToCart")
@@ -112,10 +126,7 @@ public class MyController {
         orderItemService.update(orderItem);
         User user = (User) session.getAttribute("user");
         List<OrderItem> orderItems = orderItemService.listByCartByUid(user.getId());
-        int totalPrice = 0;
-        for (OrderItem orderItem1 : orderItems) {
-            totalPrice += orderItem1.getNum() * orderItem1.getProduct().getPrice();
-        }
+        int totalPrice = getTotalPrice(orderItems);
         Map map = new HashMap(1);
         map.put("totalPrice", "合计:￥" + totalPrice);
         return map;
@@ -175,20 +186,10 @@ public class MyController {
     @RequestMapping("/addInfoAction")
     public String addInfo(@RequestParam("userName") String userName, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("province") String province, @RequestParam("city") String city, @RequestParam("county") String county, @RequestParam("address") String address,
 
-                        HttpServletRequest request, HttpSession session) {
+                          HttpServletRequest request, HttpSession session) {
         User user = (User) session.getAttribute("user");
-        int uid = user.getId();
-        Info info = new Info();
-        info.setUid(uid);
-        info.setName(userName);
-        info.setPhoneNumber(phoneNumber);
-        info.setAddress(province + city + county + address);
-        if (request.getParameter("checkbox") != null) {
-            infoService.defaultAddress(uid);
-            info.setSelected(1);
-        } else {
-            info.setSelected(0);
-        }
+        int id = user.getId();
+        Info info = getInfo(id, userName, phoneNumber, province + city + county + address, request, session);
         infoService.add(info);
         return "redirect:/info";
     }
@@ -219,6 +220,12 @@ public class MyController {
     @RequestMapping("/updateInfoAction")
     public ModelAndView updateInfo(@RequestParam("id") int id, @RequestParam("userName") String userName, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address,
                                    HttpServletRequest request, HttpSession session) {
+        Info info = getInfo(id, userName, phoneNumber, address, request, session);
+        infoService.update(info);
+        return new ModelAndView("redirect:/info");
+    }
+
+    private Info getInfo(@RequestParam("id") int id, @RequestParam("userName") String userName, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address, HttpServletRequest request, HttpSession session) {
         User user = (User) session.getAttribute("user");
         int uid = user.getId();
         Info info = new Info();
@@ -233,8 +240,45 @@ public class MyController {
         } else {
             info.setSelected(0);
         }
-        infoService.update(info);
-        return new ModelAndView("redirect:/info");
+        return info;
     }
+
+    @RequestMapping("/manageProduct/{cid}")
+    public ModelAndView manageProduct(@PathVariable("cid") int cid, HttpSession session) {
+        List<Product> products = (List<Product>) session.getAttribute("products" + cid);
+        ModelAndView modelAndView = new ModelAndView("manageProduct");
+        modelAndView.addObject("products", products);
+        return modelAndView;
+    }
+
+    @RequestMapping("/manageUser/{rid}")
+    public ModelAndView manageUser(@PathVariable("rid") int rid, HttpSession session) {
+        List<User> users = userService.list(rid);
+        ModelAndView modelAndView = new ModelAndView("manageUser");
+        modelAndView.addObject("users", users);
+        String head = "";
+        if (rid == 1) {
+            head = "普通用户管理";
+        } else {
+            head = "管理员用户管理";
+        }
+        modelAndView.addObject("head", head);
+        session.setAttribute("rid", rid);
+        return modelAndView;
+    }
+
+    @RequestMapping("/uploadImage")
+    public ModelAndView upload(UploadedImageFile file, @RequestParam("pid") int pid) throws IllegalStateException, IOException {
+        String name = RandomStringUtils.randomAlphanumeric(10);
+        String newFileName = name + ".png";
+        File newFile = new File("/static/image", newFileName);
+        file.getImage().transferTo(newFile);
+        Product product = productService.get(pid);
+        product.setFileName(newFileName);
+        productService.update(product);
+        ModelAndView mav = new ModelAndView("redirect:/manageEditProduct/" + pid);
+        return mav;
+    }
+
 
 }

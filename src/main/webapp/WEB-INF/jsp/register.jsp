@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/static/css/register.css">
 </head>
 <body>
+<c:if test="${null!=errorInfo}">
+    <h1 align="center" style="color:red">错误信息:${errorInfo}</h1>
+</c:if>
 <h1 align="center" id="title">拼购网注册</h1>
 <div id="outBox">
     <div class="main">

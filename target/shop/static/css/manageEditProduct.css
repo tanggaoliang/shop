@@ -1,0 +1,30 @@
+#left {
+    margin: 5% 10% 0 10%;
+    width: 28%;
+    height: 60%;
+    float: left;
+}
+
+#left img {
+    width: 100%;
+    height: 100%;
+}
+
+#right {
+    padding: 4%;
+    margin-top: 5%;
+    width: 40%;
+    height: 60%;
+    float: left;
+    border: 1px solid #000;
+}
+
+
+#modifyPicture, #productInfo, #productPrice, #submitChange, #deleteProduct, .upload {
+    margin-top: 5%;
+}
+
+#deleteProduct {
+    margin-left: 5%;
+}
+

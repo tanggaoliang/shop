@@ -19,7 +19,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String[] equalUri = {"/register", "/", "/index", "/check", "/listCategory"};
-        String[] containUri = {"login", "static"};
+        String[] containUri = {"login", "static","addUser"};
         String uri = request.getRequestURI();
         //UTL:除了login.jsp是可以公开访问的，其他的URL都进行拦截控制
         for (String item : equalUri) {
