@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title></title>
+    <title>拼购网后台</title>
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/manage.css">
     <link rel="stylesheet" href="/static/css/manageEditProduct.css">
@@ -72,7 +72,7 @@
         </div>
         <div id="right">
             <form action="/updateProduct">
-                <input type="hidden" name="productFileName" id="fileName" value="${product.fileName}">
+                <input type="hidden" name="fileName" id="fileName" value="${product.fileName}">
                 <input type="hidden" name="id" value="${product.id}">
                 <div id="productName" class="info">产品名称 : <input type="text" name="name" value="${product.name}">
                 </div>
@@ -82,7 +82,9 @@
                                                                  value="${product.info}"></div>
 
                 <button type="submit" class="btn btn-success" id="submitChange">更新</button>
-                <button onclick="/deleteProduct/${id}" class="btn btn-danger" id="deleteProduct">删除</button>
+
+                <input type="button" class="btn btn-danger" onclick="location.href='/deleteProduct/${id}'"
+                       id="deleteProduct" value="删除">
             </form>
         </div>
 

@@ -65,25 +65,25 @@
         <div style="padding: 15px;">
             <div id="main">
                 <div id="SearcherDiv">
-                    <button class="layui-btn" id="addProduct">增加商品</button>
-                    <form class="navbar-form navbar-left" role="search" id="searchForm" action="/search">
+                    <button class="layui-btn" onclick="location.href='/addProduct'" id="addProduct">增加商品</button>
+                    <form class="navbar-form navbar-left" role="search" id="searchForm" action="/search2">
                         <div class="form-group" id="searchBox">
                             <input type="text" class="form-control" placeholder="Search" id="searchContent" name="name">
                         </div>
                         <button type="submit" class="btn btn-default" id="searchButton">搜索</button>
                     </form>
                 </div>
-               <div>
-                   <c:forEach items="${products}" var="product" varStatus="st">
-                       <a href="/manageEditProduct/${product.id}" class="product_a">
-                           <div class="productDiv">
-                               <div class="photo"><img src="${product.fileName}"></div>
-                               <div class=" name"><span>${product.name}</span></div>
-                               <div class="price"><span>￥${product.price}</span></div>
-                           </div>
-                       </a>
-                   </c:forEach>
-               </div>
+                <div>
+                    <c:forEach items="${products}" var="product" varStatus="st">
+                        <a href="/manageEditProduct/${product.id}" class="product_a">
+                            <div class="productDiv">
+                                <div class="photo"><img src="${product.fileName}"></div>
+                                <div class=" name"><span>${product.name}</span></div>
+                                <div class="price"><span>￥${product.price}</span></div>
+                            </div>
+                        </a>
+                    </c:forEach>
+                </div>
             </div>
         </div>
     </div>

@@ -11,19 +11,24 @@ import com.tang.pojo.Product;
 import java.util.List;
 
 public interface ProductMapper {
-    public int add(Product product);
+    int add(Product product);
 
-    public void delete(int id);
+    void delete(int id);
 
-    public Product get(int id);
+    Product get(int id);
 
-    public int update(Product product);
+    int update(Product product);
 
-    public List<Product> listByCid(int cid);
+    List<Product> listByCid(int cid);
 
-    public List<Product> listAll();
+    List<Product> listAll();
 
+    Product addProduct();
 
-    public List<Product> listByName(String name);
+    void insertOnlyId(int id);
+
+    int biGIndex();
+
+    List<Product> listByName(String name);
 
 }

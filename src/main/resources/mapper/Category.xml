@@ -10,7 +10,7 @@
         values (#{name})
     </insert>
 
-    <delete id="delete" parameterType="com.tang.pojo.Category">
+    <delete id="delete" parameterType="int">
         delete
         from category
         where id = #{id}

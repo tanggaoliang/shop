@@ -18,6 +18,15 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+    @Override
+    public int bigIndex() {
+        return productMapper.biGIndex();
+    }
+
+    @Override
+    public void insertOnlyId(int id) {
+        productMapper.insertOnlyId(id);
+    }
 
     @Autowired
     ProductMapper productMapper;
@@ -49,8 +58,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void delete(Product c) {
-        productMapper.delete(c.getId());
+    public void delete(int id) {
+        productMapper.delete(id);
     }
 
     @Override

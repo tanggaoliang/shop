@@ -60,8 +60,7 @@
         <c:forEach items="${orderItems}" var="orderItem" varStatus="st">
             <!-- On cells (`td` or `th`) -->
             <tr>
-                    <%--                <td><input type="checkbox" class="myCheckbox"></td>--%>
-                <td class="active">${orderItem.product.name}</td>
+                <td class="active"><a href="/detail/${orderItem.product.id}">${orderItem.product.name}</a></td>
                 <td class="success"><span class="productPrice"
                                           id="${orderItem.id}">￥${orderItem.product.price}</span></td>
                 <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"

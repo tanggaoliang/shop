@@ -15,10 +15,14 @@ public interface ProductService {
 
     void update(Product c);
 
-    void delete(Product c);
+    void delete(int id);
 
     Product get(int id);
 
      List<Product> listByName(String name);
+
+     int bigIndex();
+
+     void insertOnlyId(int id);
 
 }

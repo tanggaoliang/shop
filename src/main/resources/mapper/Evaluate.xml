@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tang.mapper.EvaluateMapper">
+    <resultMap id="evaluateBean" type="com.tang.pojo.Evaluate">
+        <id column="eid" property="id"/>
+        <result column="starNum" property="starNum"/>
+        <result column="content" property="content"/>
+        <result column="time" property="time"/>
+        <association property="user" javaType="com.tang.pojo.User">
+            <id column="uid" property="id"/>
+            <result column="username" property="userName"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.tang.pojo.Evaluate">
+        insert into evaluate(pid, uid, starNum, content)
+        values (#{product.id}, #{user.id}, #{starNum}, #{content})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete
+        from evaluate
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultMap="evaluateBean">
+        select e.*, u.*, e.id eid, u.id uid
+        from evaluate e
+                 left join user u on e.uid = u.Id
+        where e.Id = #{0}
+    </select>
+
+    <update id="update" parameterType="com.tang.pojo.Evaluate">
+        update evaluate
+        set starNum=#{starNum},
+            content=#{content}
+        where id = #{id}
+    </update>
+    <select id="list" resultMap="evaluateBean" parameterType="_int">
+        select e.*, u.*, e.id eid, u.id uid
+        from evaluate e
+                 left join user u on e.uid = u.Id
+        where e.pid = #{0}
+        order by time desc
+    </select>
+</mapper>

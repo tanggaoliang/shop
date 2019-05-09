@@ -146,22 +146,12 @@ public class UserController {
                     ModelAndView modelAndView = new ModelAndView("redirect:/home");
                     return modelAndView;
                 } else {
-                    List<Product> products1 = productService.listByCid(1);
-                    session.setAttribute("products1", products1);
-                    List<Product> products2 = productService.listByCid(2);
-                    session.setAttribute("products2", products2);
-                    List<Product> products3 = productService.listByCid(3);
-                    session.setAttribute("products3", products3);
-                    List<Product> products4 = productService.listByCid(4);
-                    session.setAttribute("products4", products4);
-                    List<Product> products5 = productService.listByCid(5);
-                    session.setAttribute("products5", products5);
                     ModelAndView modelAndView = new ModelAndView("redirect:/manage");
                     return modelAndView;
                 }
             }
         }
-        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        ModelAndView modelAndView = new ModelAndView("login");
         modelAndView.addObject("errorInfo", "登录失败,用户名或密码错误");
         return modelAndView;
     }

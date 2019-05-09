@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>商品详情页</title>
+    <title>${product.name}-商品详情页</title>
     <link rel="stylesheet" type="text/css" href="/static/css/detail.css">
 </head>
 <body>
@@ -17,7 +17,6 @@
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <%--                <button type="button" classef="#" id="nav1">我的拼购</a>--%>
             </div>
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -62,7 +61,23 @@
         </div>
     </form>
 </div>
-<%--<div id="bottom"></div>--%>
+
+<div id="bottom">
+    <div class="info">
+        <h1 align="center" style="color:green"> 商品介绍 </h1>
+        <h1 align="center" style="color:black"><span class="productInfo">${product.info}</span></h1>
+    </div>
+
+    <h1 align="center" style="color:green"> 评价 </h1>
+    <c:forEach items="${evaluateList}" var="evaluate" varStatus="st">
+        <div class="evaluateList">
+            <span>评价人 : ${evaluate.user.userName}</span> <br>
+            <span>评分 : ${evaluate.starNum}星</span> <br>
+            <span>时间 : ${evaluate.time}</span>
+            <h2>${evaluate.content}</h2>
+        </div>
+    </c:forEach>
+</div>
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {

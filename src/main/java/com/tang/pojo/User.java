@@ -11,7 +11,7 @@ public class User {
     private Integer id;
     private String userName;
     private String password;
-    private String Salt;
+    private String salt;
     private int rid = 1;
 
     public int getRid() {
@@ -47,10 +47,10 @@ public class User {
     }
 
     public String getSalt() {
-        return Salt;
+        return salt;
     }
 
     public void setSalt(String salt) {
-        Salt = salt;
+        this.salt = salt;
     }
 }

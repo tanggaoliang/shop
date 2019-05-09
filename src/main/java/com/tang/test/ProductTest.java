@@ -27,14 +27,14 @@ public class ProductTest {
 
     @Test
     public void query() {
-        for (int i = 1; i <= 38; i++) {
-            Product product = productMapper.get(i);
-            if (product != null) {
-                String newName = "/static/image/" + product.getFileName();
-                product.setFileName(newName);
-            }
-            productMapper.update(product);
-        }
+//        for (int i = 1; i <= 38; i++) {
+////            Product product = productMapper.get(i);
+////            if (product != null) {
+////                String newName = product.getFileName().substring(14);
+////                product.setFileName(newName);
+////            }
+////            productMapper.update(product);
+////        }
     }
 }
 

@@ -51,22 +51,21 @@
 <div id="main">
     <table class="table">
         <thead>
-        <%--        <th>选中</th>--%>
         <th>商品名称</th>
         <th>单价</th>
         <th>数量</th>
         <th>时间</th>
+        <th>评价</th>
         </thead>
         <c:forEach items="${orderItems}" var="orderItem" varStatus="st">
             <!-- On cells (`td` or `th`) -->
             <tr>
-                    <%--                <td><input type="checkbox" class="myCheckbox"></td>--%>
-                <td class="active">${orderItem.product.name}</td>
+                <td class="active"><a href="/detail/${orderItem.product.id}">${orderItem.product.name}</a></td>
                 <td class="success"><span class="productPrice"
                                           id="${orderItem.id}">￥${orderItem.product.price}</span></td>
-                <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"
-                                           id="${orderItem.id}"></td>
-                <td class="danger"><input type="text" value="${orderItem.time}"></td>
+                <td class="warning"><span>${orderItem.num}</span></td>
+                <td class="danger"><span>${orderItem.time}</span></td>
+                <td class="info"><a href="/evaluate/${orderItem.product.id}">评价</a></td>
             </tr>
         </c:forEach>
         <tr>

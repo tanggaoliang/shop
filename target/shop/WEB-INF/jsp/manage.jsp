@@ -14,7 +14,6 @@
     <title>拼购网后台</title>
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/manage.css">
-    <%--    <link rel="stylesheet" href="/static/css/search.css">--%>
     <script type="text/javascript" src="/static/layui/layui.js"></script>
 </head>
 <body class="layui-layout-body">
@@ -61,7 +60,7 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <img src="/static/image/background.png">
+        <img src="/static/image/background.png" style="width: 100%;height: 100%">
 
     </div>
 

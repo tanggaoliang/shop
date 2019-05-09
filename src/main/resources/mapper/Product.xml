@@ -20,8 +20,13 @@
         insert into product
         values (null, #{name}, #{fileName}, #{price}, #{info}, #{category.id})
     </insert>
+    <insert id="insertOnlyId" parameterType="_int">
+        insert into product(Id)
+        values (#{0})
+    </insert>
 
-    <delete id="delete" parameterType="com.tang.pojo.Product">
+
+    <delete id="delete" parameterType="int">
         delete
         from product
         where id = #{id}
@@ -32,6 +37,12 @@
         from product
         where id = #{id}
     </select>
+
+    <select id="biGIndex" resultType="int">
+        select max(Id)
+        from product
+    </select>
+
 
     <update id="update" parameterType="com.tang.pojo.Product">
         update product

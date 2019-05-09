@@ -134,18 +134,12 @@
 
 <div id="main">
     <h1 align="center" style="color:green"> 手机 </h1>
-    <%--    <a href="#" class="product_a">--%>
-    <%--        <div class="productDiv">--%>
-    <%--            <div class="photo"><img src="/static/image/peijian2.png"></div>--%>
-    <%--            <div class="name"><span>小米6 硅胶保护套</span></div>--%>
-    <%--            <div class="price"><span>49元</span></div>--%>
-    <%--        </div>--%>
-    <%--    </a>--%>
+
 
     <c:forEach items="${products}" var="product" varStatus="st">
         <a href="/detail/${product.id}" class="product_a">
             <div class="productDiv">
-                <div class="photo"><img src="/static/image/${product.fileName}"></div>
+                <div class="photo"><img src="${product.fileName}"></div>
                 <div class=" name"><span>${product.name}</span></div>
                 <div class="price"><span>￥${product.price}</span></div>
             </div>

@@ -8,9 +8,7 @@ package com.tang.controller;
 
 import com.tang.mapper.ProductMapper;
 import com.tang.pojo.*;
-import com.tang.service.InfoService;
-import com.tang.service.OrderItemService;
-import com.tang.service.UserService;
+import com.tang.service.*;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -37,9 +35,13 @@ public class MyController {
     @Autowired
     private ProductMapper productService;
     @Autowired
+    private CategoryService categoryService;
+    @Autowired
     private OrderItemService orderItemService;
     @Autowired
     private InfoService infoService;
+    @Autowired
+    private EvaluateService evaluateService;
 
     @RequestMapping(value = "/showCategory/{cid}")
     public ModelAndView showCategory(@PathVariable("cid") int cid) {
@@ -61,18 +63,29 @@ public class MyController {
     public ModelAndView productDetail(@PathVariable("id") int id) {
         ModelAndView mav = new ModelAndView("detail");
         Product product = productService.get(id);
+        List<Evaluate> evaluateList = evaluateService.list(id);
         mav.addObject("product", product);
+        mav.addObject("evaluateList", evaluateList);
         return mav;
     }
 
 
     @RequestMapping(value = "/search")
-    public ModelAndView showCategory(@RequestParam("name") String name) {
+    public ModelAndView search(@RequestParam("name") String name) {
         List<Product> products = productService.listByName(name);
         ModelAndView mav = new ModelAndView("search");
         mav.addObject("products", products);
         return mav;
     }
+
+    @RequestMapping(value = "/search2")
+    public ModelAndView search2(@RequestParam("name") String name) {
+        List<Product> products = productService.listByName(name);
+        ModelAndView mav = new ModelAndView("manageProduct");
+        mav.addObject("products", products);
+        return mav;
+    }
+
 
     @RequestMapping(value = "/cart")
     public ModelAndView showCart(HttpSession session) {
@@ -245,9 +258,11 @@ public class MyController {
 
     @RequestMapping("/manageProduct/{cid}")
     public ModelAndView manageProduct(@PathVariable("cid") int cid, HttpSession session) {
-        List<Product> products = (List<Product>) session.getAttribute("products" + cid);
+        List<Product> products = productService.listByCid(cid);
+        session.setAttribute("products" + cid, products);
         ModelAndView modelAndView = new ModelAndView("manageProduct");
         modelAndView.addObject("products", products);
+        session.setAttribute("cid", cid);
         return modelAndView;
     }
 
@@ -268,16 +283,66 @@ public class MyController {
     }
 
     @RequestMapping("/uploadImage")
-    public ModelAndView upload(UploadedImageFile file, @RequestParam("pid") int pid) throws IllegalStateException, IOException {
+    public ModelAndView upload(HttpServletRequest request, UploadedImageFile file, @RequestParam("pid") int pid) throws IllegalStateException, IOException {
         String name = RandomStringUtils.randomAlphanumeric(10);
         String newFileName = name + ".png";
-        File newFile = new File("/static/image", newFileName);
+        File newFile = new File(request.getServletContext().getRealPath("/uploadImage"), newFileName);
+        newFile.getParentFile().mkdirs();
         file.getImage().transferTo(newFile);
         Product product = productService.get(pid);
-        product.setFileName(newFileName);
+        product.setFileName("/uploadImage/" + newFileName);
         productService.update(product);
         ModelAndView mav = new ModelAndView("redirect:/manageEditProduct/" + pid);
         return mav;
+    }
+
+    @RequestMapping("/updateProduct")
+    public String updateProduct(Product product, HttpSession session) {
+        productService.update(product);
+        int cid = (int) session.getAttribute("cid");
+        return "redirect:/manageProduct/" + cid;
+
+    }
+
+    @RequestMapping("/addProductAction")
+    public String addProductAction(Product product, HttpSession session) {
+        int cid = (int) session.getAttribute("cid");
+        product.setCategory(categoryService.get(cid));
+        productService.add(product);
+        return "redirect:/manageProduct/" + cid;
+    }
+
+    @RequestMapping("/deleteProduct/{id}")
+    public String deleteProduct(@PathVariable("id") int id, HttpSession session) {
+        productService.delete(id);
+        int cid = (int) session.getAttribute("cid");
+        return "redirect:/manageProduct/" + cid;
+    }
+
+    @RequestMapping("/addProduct")
+    public ModelAndView addProduct() {
+        ModelAndView modelAndView = new ModelAndView("manageAddProduct");
+        int id = productService.biGIndex();
+        productService.insertOnlyId(id + 1);
+        Product product = productService.get(id + 1);
+        modelAndView.addObject("product", product);
+        return modelAndView;
+    }
+
+    @RequestMapping("/evaluate/{pid}")
+    public ModelAndView evaluate(@PathVariable("pid") int pid) {
+        Product product = productService.get(pid);
+        ModelAndView modelAndView = new ModelAndView("evaluate");
+        modelAndView.addObject(product);
+        return modelAndView;
+    }
+
+    @RequestMapping("/evaluateAction")
+    public String evaluateAction(Evaluate evaluate, int pid, int uid) {
+        evaluate.setProduct(productService.get(pid));
+        evaluate.setUser(userService.get(uid));
+        evaluateService.add(evaluate);
+        return "redirect:/order";
     }
 
 

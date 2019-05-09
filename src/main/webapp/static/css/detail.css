@@ -111,9 +111,7 @@ button.navbar-toggle > span.icon-bar {
     width: 80%;
     height: 100%;
     margin: 5% 10%;
-    background: green;
     float: left;
-
 }
 
 .info {
@@ -122,6 +120,24 @@ button.navbar-toggle > span.icon-bar {
     margin-top: 5%;
 }
 
+.productInfo {
+    display: block;
+    margin-top: 5%;
+}
+
 #buyNow {
     margin-left: 5%;
+}
+
+.evaluateList {
+    padding: 4%;
+    border: 1px solid black;
+    width: 50%;
+    margin: 5% auto;
+}
+
+.evaluateList span {
+    display: block;
+    margin-top: 3%;
+    font-size: large;
 }

@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>商品详情页</title>
+    <title>${product.name}-商品详情页</title>
     <link rel="stylesheet" type="text/css" href="/static/css/detail.css">
 </head>
 <body>
@@ -47,21 +47,38 @@
     </nav>
 </div>
 <div id="left">
-    <img src="/static/image/${product.fileName}" alt="">
+    <img src="${product.fileName}" alt="">
 </div>
 <div id="right">
     <form action="/createSingleOrder">
         <input type="hidden" name="productId" value="${product.id}">
         <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
         <div id="productPrice" class="info">产品价格 :￥<span>${product.price}</span></div>
-        <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput" name="productNumberInput"></div>
+        <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput"
+                                                           name="productNumberInput"></div>
         <div id="buy" class="info">
             <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
             <button type="submit" class="btn btn-danger" id="buyNow">拼单购买</button>
         </div>
     </form>
 </div>
-<%--<div id="bottom"></div>--%>
+
+<div id="bottom">
+    <div class="info">
+        <h1 align="center" style="color:green"> 商品介绍 </h1>
+        <h1 align="center" style="color:black"><span class="productInfo">${product.info}</span></h1>
+    </div>
+
+    <h1 align="center" style="color:green"> 评价 </h1>
+    <c:forEach items="${evaluateList}" var="evaluate" varStatus="st">
+        <div class="evaluateList">
+            <span>评价人 : ${evaluate.user.userName}</span> <br>
+            <span>评分 : ${evaluate.starNum}星</span> <br>
+            <span>时间 : ${evaluate.time}</span>
+            <h2>${evaluate.content}</h2>
+        </div>
+    </c:forEach>
+</div>
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
