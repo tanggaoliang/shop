@@ -12,9 +12,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>拼购网后台</title>
-    <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/manage.css">
     <link rel="stylesheet" href="/static/css/manageEditProduct.css">
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
     <script type="text/javascript" src="/static/layui/layui.js"></script>
 </head>
 <body class="layui-layout-body">
@@ -65,11 +65,17 @@
         <div id="left">
             <img src="${product.fileName}" alt="">
             <form action="/uploadImage" method="post" enctype="multipart/form-data" class="upload">
-                <input type="file" name="image" accept="image/*"/> <br>
-                <input type="hidden" name="pid" value="${product.id}">
-                <input type="submit" value="修改图片">
+                <span>修改图片</span><br><br>
+                <input type="file" name="image" accept="image/*" id="imgChoose"/> <br>
+                <input type="hidden" name="pid" value="${product.id}"><br>
+                <input type="submit" value="修改图片" style="display: none" id="submitPhoto">
             </form>
         </div>
+        <script>
+            $("#imgChoose").on("input", function () {
+                $("#submitPhoto").click();
+            })
+        </script>
         <div id="right">
             <form action="/updateProduct">
                 <input type="hidden" name="fileName" id="fileName" value="${product.fileName}">
@@ -78,8 +84,8 @@
                 </div>
                 <div id="productPrice" class="info">产品价格 : <input type="text" name="price"
                                                                   value="${product.price}"></div>
-                <div id="productInfo" class="info">产品信息 : <input type="text" name="info"
-                                                                 value="${product.info}"></div>
+                <div id="productInfo" class="info">产品信息 : <textarea type="text" name="info" rows="3"
+                >${product.info}</textarea></div>
 
                 <button type="submit" class="btn btn-success" id="submitChange">更新</button>
 
@@ -102,21 +108,7 @@
         var element = layui.element;
 
     });
-    $('.myPhoto').on("input", function () {
-        var page = "/uploadImage";
-        $.ajax({
-            url: page,
-            type: 'POST',
-            cache: false, //上传文件不需要缓存
-            data: formData,
-            processData: false, // 告诉jQuery不要去处理发送的数据
-            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
-            data: {"num": num, "id": id},
-            success: function (data) {
-                $("#allTotalPrice").val(data.totalPrice)
-            }
-        });
-    });
+
 
 </script>
 </body>

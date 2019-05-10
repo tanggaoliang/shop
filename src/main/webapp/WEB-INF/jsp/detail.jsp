@@ -11,6 +11,7 @@
 <head>
     <title>${product.name}-商品详情页</title>
     <link rel="stylesheet" type="text/css" href="/static/css/detail.css">
+    <script type="text/javascript" src="/static/layui/layui.js"></script>
 </head>
 <body>
 <div id="header">
@@ -63,12 +64,13 @@
 </div>
 
 <div id="bottom">
-    <div class="info">
+    <div class=" introduction">
         <h1 align="center" style="color:green"> 商品介绍 </h1>
-        <h1 align="center" style="color:black"><span class="productInfo">${product.info}</span></h1>
+        <h3 align="center" style="color:black;text-align: left;margin-top: 2%"><p
+                class="productInfo">${product.info}</p></h3>
     </div>
 
-    <h1 align="center" style="color:green"> 评价 </h1>
+    <div><h1 align="center" style="color:green"> 评价 </h1></div>
     <c:forEach items="${evaluateList}" var="evaluate" varStatus="st">
         <div class="evaluateList">
             <span>评价人 : ${evaluate.user.userName}</span> <br>
@@ -77,6 +79,10 @@
             <h2>${evaluate.content}</h2>
         </div>
     </c:forEach>
+
+</div>
+<div id="info11" style="display: none">
+    <h3 align="center" style="color:green;margin-top: 20%"> 加入购物车成功 </h3>
 </div>
 <script>
     $(window).scroll(function () {
@@ -87,16 +93,43 @@
         }
     })
 
+
     <%--加入购物车功能--%>
-    $("#addToCart").click(function (event) {
+    $("#addToCart").click(function () {
         var pid =${product.id};
         var num = parseInt($('#productNumberInput').val());
         var page = "/addProductToCart";
-        $.get(
-            page,
-            {"num": num, "pid": pid});
-    })
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            $.ajax({
+                url: page,
+                async: true,
+                type: "GET",
+                dataType: 'json',
+                contentType: "application/json",
+                data: {"num": num, "pid": pid},
+                success: function () {
+                    layer.open({
+                        type: 1,
+                        area: ['300px', '200px'],
+                        title: '拼购网提示',
+                        content: $("#info11").html(),
+                        btn: ['确定'],
+                        btnAlign: 'c',//按钮居中,
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
 
+
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+
+            });
+        });
+    })
 </script>
 
 

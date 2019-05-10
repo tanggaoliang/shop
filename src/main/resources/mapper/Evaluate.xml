@@ -24,7 +24,7 @@
     <delete id="delete" parameterType="int">
         delete
         from evaluate
-        where id = #{id}
+        where Id = #{id}
     </delete>
 
     <select id="get" parameterType="_int" resultMap="evaluateBean">

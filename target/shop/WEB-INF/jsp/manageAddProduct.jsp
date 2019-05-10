@@ -64,12 +64,18 @@
         <!-- 内容主体区域 -->
         <div id="left">
             <img src="${product.fileName}" alt="">
-            <form action="/uploadImage" method="post" enctype="multipart/form-data" class="upload">
-                <input type="file" name="image" accept="image/*"/> <br>
-                <input type="hidden" name="pid" value="${product.id}">
-                <input type="submit" value="修改图片">
+            <form id="imgUpload" action="/uploadImage" method="post" enctype="multipart/form-data" class="upload">
+                <span>修改图片</span><br><br>
+                <input type="file" name="image" accept="image/*" id="imgChoose"/> <br>
+                <input type="hidden" name="pid" value="${product.id}"><br>
+                <input type="submit"  style="display: none" id="submitPhoto">
             </form>
         </div>
+        <script>
+            $("#imgChoose").on("input", function () {
+                $("#submitPhoto").click();
+            })
+        </script>
         <div id="right">
             <form action="/addProductAction">
                 <input type="hidden" name="fileName" value="">
@@ -98,21 +104,7 @@
         var element = layui.element;
 
     });
-    $('.myPhoto').on("input", function () {
-        var page = "/uploadImage";
-        $.ajax({
-            url: page,
-            type: 'POST',
-            cache: false, //上传文件不需要缓存
-            data: formData,
-            processData: false, // 告诉jQuery不要去处理发送的数据
-            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
-            data: {"num": num, "id": id},
-            success: function (data) {
-                $("#allTotalPrice").val(data.totalPrice)
-            }
-        });
-    });
+
 
 </script>
 </body>

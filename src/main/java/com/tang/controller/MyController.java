@@ -107,7 +107,8 @@ public class MyController {
     }
 
     @RequestMapping(value = "/addProductToCart")
-    public void addProductToCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpSession session) {
+    @ResponseBody
+    public Map<String, String> addProductToCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpSession session) {
         User user = (User) session.getAttribute("user");
         int uid = user.getId();
         Integer orderItemId = orderItemService.ifInCart(uid, pid);
@@ -123,6 +124,9 @@ public class MyController {
             orderItem1.setNum(orderItem1.getNum() + num);
             orderItemService.update(orderItem1);
         }
+        Map map = new HashMap(1);
+        map.put("info", "加入购物车成功");
+        return map;
     }
 
     @RequestMapping(value = "/deleteOrderItem/{pid}")
@@ -342,6 +346,12 @@ public class MyController {
         evaluate.setProduct(productService.get(pid));
         evaluate.setUser(userService.get(uid));
         evaluateService.add(evaluate);
+        return "redirect:/order";
+    }
+
+    @RequestMapping("/orderItemService/{id}")
+    public String orderItemService(@PathVariable("id") int id) {
+        orderItemService.delete(id);
         return "redirect:/order";
     }
 

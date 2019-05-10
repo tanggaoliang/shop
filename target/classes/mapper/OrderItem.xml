@@ -24,7 +24,7 @@
     <delete id="delete" parameterType="int">
         delete
         from orderItem
-        where id = #{0}
+        where id = #{id}
     </delete>
 
 

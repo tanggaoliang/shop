@@ -122,7 +122,10 @@ button.navbar-toggle > span.icon-bar {
 
 .productInfo {
     display: block;
-    margin-top: 5%;
+}
+.introduction{
+    padding: 1%;
+
 }
 
 #buyNow {

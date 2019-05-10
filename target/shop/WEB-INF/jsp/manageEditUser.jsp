@@ -66,7 +66,8 @@
 
         <!-- 内容主体区域 -->
         <div id="outBox">
-            <div class="main">
+            <h1 align="center" style="color:green"> 用户信息修改 </h1>
+            <div class="main" style="width: 50%;margin: 5% auto">
                 <form class="form-horizontal" action="/updateUser" method="post">
                     <div class="form-group">
                         <label for="userName" class="col-sm-2 control-label">用户名:</label>

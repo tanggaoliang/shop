@@ -109,7 +109,6 @@
             data: {"num": num, "id": id},
             success: function (data) {
                 $("#allTotalPrice").val(data.totalPrice)
-                // alert("测试进入success方法");
             }
         });
     });

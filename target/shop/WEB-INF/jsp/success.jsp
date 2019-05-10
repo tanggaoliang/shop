@@ -17,7 +17,6 @@
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <%--                <button type="button" classef="#" id="nav1">我的拼购</a>--%>
             </div>
             <div class="collapse navbar-collapse " id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -47,7 +46,7 @@
     </nav>
 </div>
 <h1></h1>
-<div><img src="/static/image/alipay.png" alt="" style="margin: 0 33%"></div>
+<div><img src="/static/image/alipay.png" alt="" style="margin: 0 33%;width: 30%"></div>
 <h1 align="center" style="color:green"><a href="/order">查看订单</a></h1>
 </body>
 </html>
