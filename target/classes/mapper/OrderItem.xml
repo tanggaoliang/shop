@@ -8,6 +8,11 @@
         <id column="oid" property="id"/>
         <result column="num" property="num"/>
         <result column="time" property="time"/>
+        <result column="lastPrice" property="lastPrice"/>
+        <association property="user" javaType="com.tang.pojo.User">
+            <id column="uid" property="id"/>
+            <result column="username" property="userName"/>
+        </association>
         <association property="product" javaType="com.tang.pojo.Product">
             <id column="pid" property="id"/>
             <result column="name" property="name"/>
@@ -17,8 +22,8 @@
 
 
     <insert id="add" parameterType="com.tang.pojo.OrderItem">
-        insert into orderItem(id, uid, pid, num, success)
-        values (null, #{user.id}, #{product.id}, #{num}, #{success})
+        insert into orderItem(id, uid, pid, num, success, lastPrice)
+        values (null, #{user.id}, #{product.id}, #{num}, #{success}, #{lastPrice})
     </insert>
 
     <delete id="delete" parameterType="int">
@@ -54,6 +59,7 @@
                  left join product p on o.pid = p.Id
         where o.success = 0
           and uid = #{uid}
+        order by time desc
     </select>
 
     <update id="update" parameterType="com.tang.pojo.OrderItem">
@@ -81,6 +87,15 @@
                  left join product p on o.pid = p.Id
         where o.success = 1
           and o.uid = #{0}
+        order by o.time desc
+    </select>
+
+    <select id="listAllOrder" resultMap="orderItemBean">
+        select o.*, p.*, u.*, o.id oid, p.id pid, u.Id uid
+        from orderitem o
+                 left join product p on o.pid = p.Id
+                 left join user u on o.uid = u.Id
+        where o.success = 1
         order by o.time desc
     </select>
 

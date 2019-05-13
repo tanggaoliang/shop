@@ -16,5 +16,7 @@ public interface EvaluateMapper {
 
     List<Evaluate> list(int pid);
 
+    List<Evaluate> listAll();
+
 
 }

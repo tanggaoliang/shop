@@ -42,6 +42,8 @@ public class MyController {
     private InfoService infoService;
     @Autowired
     private EvaluateService evaluateService;
+    @Autowired
+    private GroupBuyService groupBuyService;
 
     @RequestMapping(value = "/showCategory/{cid}")
     public ModelAndView showCategory(@PathVariable("cid") int cid) {
@@ -64,8 +66,14 @@ public class MyController {
         ModelAndView mav = new ModelAndView("detail");
         Product product = productService.get(id);
         List<Evaluate> evaluateList = evaluateService.list(id);
+        GroupBuy groupBuy = groupBuyService.inGroup(id);
+        Integer groupNum = 0;
+        if (groupBuy != null) {
+            groupNum = groupBuy.getUserNum();
+        }
         mav.addObject("product", product);
         mav.addObject("evaluateList", evaluateList);
+        mav.addObject("groupNum", groupNum);
         return mav;
     }
 
@@ -117,6 +125,7 @@ public class MyController {
             orderItem.setNum(num);
             orderItem.setUser(user);
             orderItem.setProduct(productService.get(pid));
+            orderItem.setLastPrice(productService.get(pid).getPrice());
             orderItem.setSuccess(0);
             orderItemService.add(orderItem);
         } else {
@@ -183,6 +192,7 @@ public class MyController {
         OrderItem orderItem = new OrderItem();
         orderItem.setUser(user);
         orderItem.setProduct(productService.get(productId));
+        orderItem.setLastPrice(productService.get(productId).getPrice());
         orderItem.setNum(productNumberInput);
         orderItem.setSuccess(1);
         orderItemService.add(orderItem);
@@ -353,6 +363,82 @@ public class MyController {
     public String orderItemService(@PathVariable("id") int id) {
         orderItemService.delete(id);
         return "redirect:/order";
+    }
+
+    @RequestMapping("/orderItemService2/{id}")
+    public String orderItemService2(@PathVariable("id") int id) {
+        orderItemService.delete(id);
+        return "redirect:/manageOrderItem";
+    }
+
+    @RequestMapping("/manageOrderItem")
+    public ModelAndView manageOrderItem() {
+        ModelAndView modelAndView = new ModelAndView("manageOrderItem");
+        List<OrderItem> orderItemList = orderItemService.listAllOrder();
+        modelAndView.addObject("orderItemList", orderItemList);
+        return modelAndView;
+    }
+
+    @RequestMapping("/manageEvaluate")
+    public ModelAndView manageEvaluate() {
+        ModelAndView modelAndView = new ModelAndView("manageEvaluate");
+        List<Evaluate> evaluateList = evaluateService.listAll();
+        modelAndView.addObject("evaluateList", evaluateList);
+        return modelAndView;
+    }
+
+    @RequestMapping("/deleteEvaluate/{id}")
+    public String deleteEvaluate(@PathVariable("id") int id) {
+        evaluateService.delete(id);
+        return "redirect:/manageEvaluate";
+    }
+
+    @RequestMapping("/groupBuy")
+    @ResponseBody
+    public Map<String, String> groupBuy(int pid, int uid, int num, HttpSession session) {
+        GroupBuy groupBuy = groupBuyService.inGroup(pid);
+        Integer userNum = 0;
+        if (groupBuy == null) {
+            groupBuy = new GroupBuy();
+            groupBuy.setUid1(uid);
+            groupBuy.setPid(pid);
+            groupBuy.setNum1(num);
+            groupBuy.setUserNum(1);
+            groupBuyService.add(groupBuy);
+            userNum = 1;
+        } else if (groupBuy.getUserNum() == 1) {
+            groupBuy.setUid2(uid);
+            groupBuy.setNum2(num);
+            groupBuy.setUserNum(2);
+            groupBuyService.update(groupBuy);
+            userNum = 2;
+        } else {
+            Product product = productService.get(pid);
+            groupBuy.setUid3(uid);
+            groupBuy.setNum3(num);
+            OrderItem orderItem1 = new OrderItem();
+            OrderItem orderItem2 = new OrderItem();
+            OrderItem orderItem3 = new OrderItem();
+            orderItem1.setUser(userService.get(groupBuy.getUid1()));
+            orderItem2.setUser(userService.get(groupBuy.getUid2()));
+            orderItem3.setUser(userService.get(groupBuy.getUid3()));
+            orderItem1.setProduct(product);
+            orderItem2.setProduct(product);
+            orderItem3.setProduct(product);
+            orderItem1.setNum(groupBuy.getNum1());
+            orderItem2.setNum(groupBuy.getNum2());
+            orderItem3.setNum(groupBuy.getNum3());
+            orderItem1.setLastPrice(product.getPrice2());
+            orderItem2.setLastPrice(product.getPrice2());
+            orderItem3.setLastPrice(product.getPrice2());
+            orderItemService.add(orderItem1);
+            orderItemService.add(orderItem2);
+            orderItemService.add(orderItem3);
+            groupBuyService.delete(groupBuy.getId());
+        }
+        Map map = new HashMap(1);
+        map.put("userNum", userNum);
+        return map;
     }
 
 

@@ -13,6 +13,10 @@
             <id column="uid" property="id"/>
             <result column="username" property="userName"/>
         </association>
+        <association property="product" javaType="com.tang.pojo.Product">
+            <id column="pid" property="id"/>
+            <result column="name" property="name"/>
+        </association>
     </resultMap>
 
 
@@ -45,6 +49,14 @@
         from evaluate e
                  left join user u on e.uid = u.Id
         where e.pid = #{0}
+        order by time desc
+    </select>
+
+    <select id="listAll" resultMap="evaluateBean">
+        select e.*, u.*, p.*, e.id eid, u.id uid, p.id pid
+        from evaluate e
+                 left join user u on e.uid = u.Id
+                 left join product p on e.pid = p.Id
         order by time desc
     </select>
 </mapper>

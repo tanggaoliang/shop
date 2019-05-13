@@ -62,7 +62,7 @@
             <tr>
                 <td class="active"><a href="/detail/${orderItem.product.id}">${orderItem.product.name}</a></td>
                 <td class="success"><span class="productPrice"
-                                          id="${orderItem.id}">￥${orderItem.product.price}</span></td>
+                                          id="${orderItem.id}">￥${orderItem.lastPrice}</span></td>
                 <td class="warning"><span>${orderItem.num}</span></td>
                 <td class="danger"><span>${orderItem.time}</span></td>
                 <td class="info"><a href="/evaluate/${orderItem.product.id}">评价</a></td>

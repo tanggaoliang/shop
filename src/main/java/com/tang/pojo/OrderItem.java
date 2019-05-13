@@ -10,13 +10,23 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class OrderItem {
     private int id;
     private User user;
     private Product product;
     private int num;
-    private int success;
+    private int success = 0;
     private String time;
+    private int lastPrice;
+
+    public int getLastPrice() {
+        return lastPrice;
+    }
+
+    public void setLastPrice(int lastPrice) {
+        this.lastPrice = lastPrice;
+    }
 
 
     public String getTime() {
@@ -31,10 +41,12 @@ public class OrderItem {
     public String toString() {
         return "OrderItem{" +
                 "id=" + id +
-//                ", user=" + user +
+                ", user=" + user +
                 ", product=" + product +
                 ", num=" + num +
                 ", success=" + success +
+                ", time='" + time + '\'' +
+                ", lastPrice=" + lastPrice +
                 '}';
     }
 

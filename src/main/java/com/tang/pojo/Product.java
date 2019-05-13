@@ -11,8 +11,17 @@ public class Product {
     private String name;
     private String fileName;
     private int price;
+    private int price2;
     private String info;
     private Category category;
+
+    public int getPrice2() {
+        return price2;
+    }
+
+    public void setPrice2(int price2) {
+        this.price2 = price2;
+    }
 
     public int getId() {
         return id;
@@ -69,8 +78,8 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", fileName='" + fileName + '\'' +
                 ", price=" + price +
+                ", price2=" + price2 +
                 ", info='" + info + '\'' +
-//                ", category=" + category.getId() +
                 '}';
     }
 }

@@ -62,7 +62,7 @@
             <tr>
                 <td class="active"><a href="/detail/${orderItem.product.id}">${orderItem.product.name}</a></td>
                 <td class="success"><span class="productPrice"
-                                          id="${orderItem.id}">￥${orderItem.product.price}</span></td>
+                                          id="${orderItem.id}">￥${orderItem.lastPrice}</span></td>
                 <td class="warning"><input type="number" value="${orderItem.num}" class="productNumber"
                                            id="${orderItem.id}"></td>
                 <td class="danger"><a href="deleteOrderItem/${orderItem.id}">删除</a></td>
@@ -95,7 +95,7 @@
     //2.检测商品的数量是否改变
     //3.商品数量的改变要提交到数据库
 
-    $('.productNumber').on("input", function () {
+       $('.productNumber').on("input", function () {
         var totalPrice;
         var id = $(this).attr("id");
         var num = parseInt($(this).val());

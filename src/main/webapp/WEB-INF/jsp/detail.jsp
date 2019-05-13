@@ -54,13 +54,59 @@
         <input type="hidden" name="productId" value="${product.id}">
         <div id="productName" class="info">产品名称 : <span>${product.name}</span></div>
         <div id="productPrice" class="info">产品价格 :￥<span>${product.price}</span></div>
+        <div id="productPrice2" class="info">拼购价格 :￥<span>${product.price2}</span>
+            <input type="text" readOnly="true"
+                   value="当前有${groupNum}人拼单,3人即可拼单"/>
+        </div>
         <div id="productNumber" class="info">购买数量 : <input type="number" value="1" id="productNumberInput"
-                                                           name="productNumberInput"></div>
+                                                           name="productNumberInput"
+                                                           onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')"></div>
         <div id="buy" class="info">
             <button type="button" class="btn btn-success" id="addToCart">加入购物车</button>
-            <button type="submit" class="btn btn-danger" id="buyNow">拼单购买</button>
+            <button type="submit" class="btn btn-danger" id="buyNow">单独购买</button>
+            <input type="button" class="btn btn-danger" id="groupBuy"
+                   value="拼单购买"></input>
         </div>
     </form>
+    <script>
+        // 拼单链接功能
+        $('#groupBuy').on("click", function () {
+            var pid =${product.id};
+            var uid =${user.id};
+            var num = parseInt($('#productNumberInput').val());
+            var page = "/groupBuy";
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                $.ajax({
+                    url: page,
+                    async: false,
+                    type: "GET",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    data: {"pid": pid, "uid": uid, "num": num},
+                    success: function () {
+                        layer.open({
+                            type: 1,
+                            area: ['300px', '200px'],
+                            title: '拼购网提示',
+                            content: $("#info12").html(),
+                            btn: ['确定'],
+                            btnAlign: 'c',//按钮居中,
+                            yes: function (index) {
+                                layer.close(index);
+                            }
+                        });
+
+
+                    }
+
+                });
+            });
+        })
+
+
+    </script>
+
 </div>
 
 <div id="bottom">
@@ -82,7 +128,10 @@
 
 </div>
 <div id="info11" style="display: none">
-    <h3 align="center" style="color:green;margin-top: 20%"> 加入购物车成功 </h3>
+    <h4 align="center" style="color:black;margin-top: 20%"> 加入购物车成功 </h4>
+</div>
+<div id="info12" style="display: none">
+    <h4 align="center" style="color:black;margin-top: 20%"> 拼购成功 </h4>
 </div>
 <script>
     $(window).scroll(function () {
@@ -122,9 +171,6 @@
                     });
 
 
-                },
-                error: function (err) {
-                    console.log(err)
                 }
 
             });

@@ -20,7 +20,7 @@
 }
 
 
-#modifyPicture, #productInfo, #productPrice, #submitChange, #deleteProduct, .upload {
+#modifyPicture, #productInfo, #productPrice,#productPrice2, #submitChange, #deleteProduct, .upload {
     margin-top: 5%;
 }
 #productInfo{

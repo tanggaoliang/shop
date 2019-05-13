@@ -114,7 +114,7 @@ public class UserController {
             return new ModelAndView("redirect:/manageUser/1");
         } else {
             ModelAndView modelAndView = new ModelAndView("redirect:/editUser/" + id);
-            session.setAttribute("errorInfo", "两次密码不一致,请重新输入!");
+            modelAndView.addObject("errorInfo", "两次密码不一致,请重新输入!");
             return modelAndView;
         }
 

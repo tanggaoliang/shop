@@ -29,9 +29,11 @@ public interface OrderItemMapper {
 
     int update(OrderItem orderItem);
 
-    List<OrderItem> listByCart();
 
     List<OrderItem> listByOrderAndUid(int uid);
+
+
+    List<OrderItem> listAllOrder();
 
 
 }

@@ -27,14 +27,15 @@ public class ProductTest {
 
     @Test
     public void query() {
-//        for (int i = 1; i <= 38; i++) {
-////            Product product = productMapper.get(i);
-////            if (product != null) {
-////                String newName = product.getFileName().substring(14);
-////                product.setFileName(newName);
-////            }
-////            productMapper.update(product);
-////        }
+        for (int i = 1; i <= 39; i++) {
+            Product product = productMapper.get(i);
+            if (product != null) {
+                int price = product.getPrice();
+                price = (int) price * 4 / 5;
+                product.setPrice2(price);
+            }
+            productMapper.update(product);
+        }
     }
 }
 

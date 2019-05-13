@@ -8,7 +8,6 @@ import java.util.List;
 public interface OrderItemService {
 
 
-    List<OrderItem> listByCart();
 
     void add(OrderItem c);
 
@@ -27,6 +26,8 @@ public interface OrderItemService {
     List<OrderItem> listByCartByUid(int uid);
 
     List<OrderItem> listByOrder(int uid);
+
+    List<OrderItem> listAllOrder();
 
 
 }

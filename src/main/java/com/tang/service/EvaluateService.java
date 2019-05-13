@@ -8,6 +8,8 @@ public interface EvaluateService {
 
     List<Evaluate> list(int pid);
 
+    List<Evaluate> listAll();
+
     void add(Evaluate c);
 
     void update(Evaluate c);
@@ -15,5 +17,6 @@ public interface EvaluateService {
     void delete(int id);
 
     Evaluate get(int id);
+
 
 }

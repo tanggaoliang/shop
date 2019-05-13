@@ -18,7 +18,7 @@
 
     <insert id="add" parameterType="com.tang.pojo.Product">
         insert into product
-        values (null, #{name}, #{fileName}, #{price}, #{info}, #{category.id})
+        values (null, #{name}, #{fileName}, #{price}, #{price2}, #{info}, #{category.id})
     </insert>
     <insert id="insertOnlyId" parameterType="_int">
         insert into product(Id)
@@ -49,6 +49,7 @@
         set name=#{name},
             fileName=#{fileName},
             price=#{price},
+            price2=#{price2},
             info=#{info}
         where id = #{id}
     </update>

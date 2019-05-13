@@ -22,10 +22,7 @@ public class OrderItemServiceImpl implements OrderItemService {
     @Autowired
     OrderItemMapper orderItemMapper;
 
-    @Override
-    public List<OrderItem> listByCart() {
-        return orderItemMapper.listByCart();
-    }
+
 
     @Override
     public List<OrderItem> listByOrder(int uid) {
@@ -36,6 +33,11 @@ public class OrderItemServiceImpl implements OrderItemService {
     public void add(OrderItem c) {
         orderItemMapper.add(c);
 
+    }
+
+    @Override
+    public List<OrderItem> listAllOrder() {
+        return orderItemMapper.listAllOrder();
     }
 
     @Override

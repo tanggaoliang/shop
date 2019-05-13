@@ -17,6 +17,11 @@ import java.util.List;
 
 @Service
 public class EvaluateServiceImpl implements EvaluateService {
+    @Override
+    public List<Evaluate> listAll() {
+        return evaluateMapper.listAll();
+    }
+
     @Autowired
     EvaluateMapper evaluateMapper;
 
