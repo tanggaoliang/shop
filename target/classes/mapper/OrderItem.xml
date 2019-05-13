@@ -33,10 +33,13 @@
     </delete>
 
 
-    <select id="get" parameterType="_int" resultType="com.tang.pojo.OrderItem">
-        select *
-        from orderItem
-        where id = #{id}
+    <select id="get" parameterType="_int" resultMap="orderItemBean">
+        select o.*, p.*, u.*, o.id oid, p.id pid, u.Id uid
+        from orderitem o
+                 left join product p on o.pid = p.Id
+                 left join user u on o.uid = u.Id
+            and o.Id = #{0}
+        order by time desc
     </select>
     <select id="ifInCart" resultType="int">
         select id

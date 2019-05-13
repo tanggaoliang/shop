@@ -10,107 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01fafd76-84d6-4b51-a660-33241bbec7a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/mapper/GroupBuyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/pojo/GroupBuy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/GroupBuyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/impl/GroupBuyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/GroupBuy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/base2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEvaluate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageOrderItem.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/tang/mapper/GroupBuyMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/tang/pojo/GroupBuy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/tang/service/GroupBuyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/tang/service/impl/GroupBuyServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/GroupBuy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/mapper/GroupBuyMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/GroupBuy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/GroupBuyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/impl/GroupBuyServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/GroupBuy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/base2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageEvaluate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageOrderItem.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/shop/uploadImage/ZD3v2cYwUd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/22e325f7-0b33-4797-9b25-e80219626c06.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/22e325f7-0b33-4797-9b25-e80219626c06.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/shop/uploadImage/f1DEXpN8VF.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/mapper/EvaluateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/mapper/EvaluateMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/mapper/OrderItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/mapper/OrderItemMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/pojo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/pojo/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/service/EvaluateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/EvaluateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/OrderItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/service/impl/EvaluateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/impl/EvaluateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/service/impl/OrderItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/service/impl/OrderItemServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SpringMVC-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SpringMVC-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/Evaluate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/Evaluate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/Product.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/evaluate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/evaluate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/manageEditProduct.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/manageEditProduct.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SpringMVC-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SpringMVC-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tang/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/interceptor/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/mapper/EvaluateMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/mapper/EvaluateMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/mapper/OrderItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/mapper/OrderItemMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tang/pojo/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/pojo/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/pojo/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/service/EvaluateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/service/EvaluateService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/service/OrderItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/service/OrderItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/service/impl/EvaluateServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/service/impl/EvaluateServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/service/impl/OrderItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/service/impl/OrderItemServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tang/test/ProductTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/test/ProductTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/Evaluate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/Evaluate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderItem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderItem.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/Product.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/SpringMVC-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/SpringMVC-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/mapper/EvaluateMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/mapper/EvaluateMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/mapper/OrderItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/mapper/OrderItemMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/EvaluateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/EvaluateService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/OrderItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/OrderItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/impl/EvaluateServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/impl/EvaluateServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/impl/OrderItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/service/impl/OrderItemServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/test/ProductTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/test/ProductTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/Evaluate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/Evaluate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/OrderItem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/OrderItem.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/Product.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageAddProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageAddProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageAddUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageAddUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageEditProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageEditUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageEditUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/manageUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/static/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/static/css/detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/static/css/evaluate.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/static/css/evaluate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/static/css/manageEditProduct.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/static/css/manageEditProduct.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/success.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -157,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="432" column="57" lean-forward="true" selection-start-line="432" selection-start-column="57" selection-end-line="432" selection-end-column="57" />
+            <state relative-caret-position="387">
+              <caret line="420" column="9" selection-start-line="420" selection-start-column="9" selection-end-line="420" selection-end-column="9" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -168,52 +85,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="56" column="82" lean-forward="true" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="82" />
+            <state relative-caret-position="323">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml">
+        <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/impl/GroupBuyServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#877#878#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GroupBuy.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/SpringMVC-config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+            <state relative-caret-position="174">
+              <caret line="227" selection-start-line="227" selection-end-line="227" />
             </state>
           </provider>
         </entry>
@@ -237,20 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchBox</find>
-      <find>creates</find>
-      <find>but</find>
-      <find>aliases</find>
-      <find>botto</find>
-      <find>login</find>
-      <find>.productInfo {</find>
-      <find>addProductToCart</find>
-      <find>layer</find>
-      <find>updateOrderItem</find>
-      <find>addProductAction</find>
-      <find>uploadImage</find>
-      <find>myPhoto</find>
-      <find>session.setA</find>
       <find>/updateUser</find>
       <find>body</find>
       <find>listBy</find>
@@ -265,8 +135,22 @@
       <find>addto</find>
       <find>/order</find>
       <find>create</find>
-      <find>addPr</find>
       <find>/detail</find>
+      <find>orderItem</find>
+      <find>addP</find>
+      <find>addProductto</find>
+      <find>addPr</find>
+      <find>addProductToCart</find>
+      <find>/cart</find>
+      <find>total</find>
+      <find>creates</find>
+      <find>RandomStringUtils</find>
+      <find>upload</find>
+      <find>addProductT</find>
+      <find>myo</find>
+      <find>if</find>
+      <find>/upload</find>
+      <find>info13</find>
     </findStrings>
     <replaceStrings>
       <replace>User</replace>
@@ -307,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/search.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/controller/ViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/mapper/ProductMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/service/ProductService.java" />
@@ -319,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/Evaluate.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/evaluate.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manage.jsp" />
@@ -342,22 +224,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageOrderItem.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/Product.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/Product.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/detail.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/manageEditProduct.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/mapper/GroupBuyMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/service/GroupBuyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/service/impl/GroupBuyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/order.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/GroupBuy.java" />
         <option value="$PROJECT_DIR$/src/main/resources/SpringMVC-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/GroupBuy.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/UploadedImageFile.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java" />
       </list>
     </option>
   </component>
@@ -407,6 +291,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -417,151 +302,25 @@
             <path>
               <item name="shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tang" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="uploadImage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -820,7 +579,9 @@
       <workItem from="1557447915651" duration="3569000" />
       <workItem from="1557645646745" duration="7342000" />
       <workItem from="1557653238296" duration="427000" />
-      <workItem from="1557661660246" duration="15616000" />
+      <workItem from="1557661660246" duration="18603000" />
+      <workItem from="1557719679644" duration="3126000" />
+      <workItem from="1557723086262" duration="11856000" />
     </task>
     <task id="LOCAL-00001" summary="2019 4 24">
       <created>1556091026112</created>
@@ -878,43 +639,50 @@
       <option name="project" value="LOCAL" />
       <updated>1557448036181</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2019 5 13">
+      <created>1557716123785</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557716123785</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ProductTest - 2019.05.08 at 14h 47m 25s.xml">
+    <history-entry file="ProductTest - 2019.05.13 at 15h 37m 27s.xml">
       <configuration name="ProductTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductTest - 2019.05.08 at 14h 48m 43s.xml">
+    <history-entry file="ProductTest - 2019.05.13 at 15h 38m 11s.xml">
       <configuration name="ProductTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductTest - 2019.05.08 at 14h 49m 40s.xml">
+    <history-entry file="ProductTest - 2019.05.13 at 15h 40m 03s.xml">
       <configuration name="ProductTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.08 at 14h 50m 14s.xml">
-      <configuration name="ProductTest.query" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.08 at 14h 50m 23s.xml">
-      <configuration name="ProductTest.query" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.08 at 19h 36m 50s.xml">
-      <configuration name="ProductTest.query" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.08 at 19h 45m 54s.xml">
-      <configuration name="ProductTest.query" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductTest - 2019.05.08 at 19h 48m 25s.xml">
+    <history-entry file="ProductTest - 2019.05.13 at 15h 40m 57s.xml">
       <configuration name="ProductTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.12 at 20h 27m 33s.xml">
+    <history-entry file="ProductTest_query - 2019.05.13 at 16h 03m 30s.xml">
       <configuration name="ProductTest.query" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductTest_query - 2019.05.12 at 20h 45m 19s.xml">
+    <history-entry file="ProductTest_query - 2019.05.13 at 16h 05m 40s.xml">
+      <configuration name="ProductTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductTest_query - 2019.05.13 at 16h 05m 48s.xml">
+      <configuration name="ProductTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductTest - 2019.05.13 at 16h 06m 31s.xml">
+      <configuration name="ProductTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductTest - 2019.05.13 at 16h 07m 30s.xml">
+      <configuration name="ProductTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductTest_query - 2019.05.13 at 16h 37m 09s.xml">
       <configuration name="ProductTest.query" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391678000" />
+    <option name="totallyTimeSpent" value="409647000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -928,7 +696,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20922747" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973205" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -937,15 +705,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943925" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49410504" weight="0.7316785" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.60087" weight="0.64775413" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5997854" weight="0.34515366" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994641" weight="0.32943925" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3286052" />
+      <window_info anchor="bottom" id="Application Servers" order="6" weight="0.3286052" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4994641" weight="0.32943925" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32943925" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.39912996" side_tool="true" weight="0.46335697" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.40021458" side_tool="true" weight="0.534279" />
       <window_info anchor="bottom" id="Problems" order="12" weight="0.3298292" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32742316" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32943925" />
@@ -962,7 +730,7 @@
       <window_info anchor="right" id="Inspection Results" order="8" weight="0.32887855" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21968462" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973205" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -970,8 +738,8 @@
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943925" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49410504" weight="0.7359813" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6012862" weight="0.6146572" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49410504" weight="0.7316785" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5997854" weight="0.42553192" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994641" weight="0.32943925" />
@@ -979,18 +747,18 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32943925" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.39871383" side_tool="true" weight="0.46378505" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.40021458" side_tool="true" weight="0.534279" />
       <window_info anchor="bottom" id="Problems" order="12" weight="0.3298292" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32742316" />
-      <window_info anchor="bottom" id="Java Enterprise" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32943925" />
-      <window_info anchor="bottom" id="Database Changes" order="16" weight="0.32943925" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32742316" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32943925" />
+      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32943925" />
+      <window_info anchor="bottom" id="Java Enterprise" order="16" weight="0.32978722" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.329582" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32952693" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.32583067" />
       <window_info anchor="right" id="Inspection Results" order="8" weight="0.32887855" />
@@ -1007,73 +775,29 @@
     <MESSAGE value="2019 5 8" />
     <MESSAGE value="2019 5 9" />
     <MESSAGE value="2019 5 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019 5 10" />
+    <MESSAGE value="2019 5 13" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019 5 13" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java</url>
-          <line>398</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java</url>
-          <line>440</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-        <watch expression="orderItemList" />
+        <watch expression="orderItemList" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/shop$Tomcat9.ic" NAME="Tomcat9 Coverage Results" MODIFIED="1556020292455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>orderItemList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/check.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/evaluate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/base.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="87" selection-start-line="4" selection-start-column="87" selection-end-line="4" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -1113,20 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
           <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://H:/maven_repository/org/springframework/spring-webmvc/4.2.5.RELEASE/spring-webmvc-4.2.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
         </state>
       </provider>
     </entry>
@@ -1211,13 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/mapper/CategoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -1248,13 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/detail.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1265,13 +961,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-651" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp">
@@ -1305,40 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/OrderItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/impl/OrderItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="64" column="85" selection-start-line="64" selection-start-column="85" selection-end-line="64" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1387,13 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/mapper/OrderItemMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/impl/GroupBuyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -1409,36 +1057,156 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SpringMVC-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
+        <state relative-caret-position="602">
           <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/org/springframework/spring-webmvc/4.2.5.RELEASE/spring-webmvc-4.2.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="49" column="60" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#h1#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageEditProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/pojo/UploadedImageFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GroupBuy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
+        <state relative-caret-position="256">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/OrderItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/mapper/OrderItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/service/impl/OrderItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/org/springframework/spring-webmvc/4.2.5.RELEASE/spring-webmvc-4.2.5.RELEASE-sources.jar!/org/springframework/web/servlet/FrameworkServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="990" selection-start-line="990" selection-end-line="990" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/org/springframework/spring-webmvc/4.2.5.RELEASE/spring-webmvc-4.2.5.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="895" selection-start-line="895" selection-end-line="895" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state relative-caret-position="110">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="56" column="82" lean-forward="true" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="82" />
+        <state relative-caret-position="266">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="227" selection-start-line="227" selection-end-line="227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="432" column="57" lean-forward="true" selection-start-line="432" selection-start-column="57" selection-end-line="432" selection-end-column="57" />
+        <state relative-caret-position="387">
+          <caret line="420" column="9" selection-start-line="420" selection-start-column="9" selection-end-line="420" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

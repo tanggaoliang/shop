@@ -9,8 +9,10 @@ package com.tang.test;
 import com.tang.mapper.OrderItemMapper;
 import com.tang.mapper.ProductMapper;
 import com.tang.pojo.Category;
+import com.tang.pojo.OrderItem;
 import com.tang.pojo.Product;
 import com.tang.service.OrderItemService;
+import com.tang.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,20 +25,16 @@ import java.util.List;
 @ContextConfiguration("classpath:applicationContext-transaction-full.xml")
 public class ProductTest {
     @Autowired
-    ProductMapper productMapper;
+    OrderItemService orderItemService;
 
     @Test
     public void query() {
-        for (int i = 1; i <= 39; i++) {
-            Product product = productMapper.get(i);
-            if (product != null) {
-                int price = product.getPrice();
-                price = (int) price * 4 / 5;
-                product.setPrice2(price);
-            }
-            productMapper.update(product);
-        }
+
+        int a=1;
+        Integer b=1;
+        System.out.println(a==b);
     }
 }
+
 
 

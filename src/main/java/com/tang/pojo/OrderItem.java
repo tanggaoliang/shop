@@ -41,8 +41,8 @@ public class OrderItem {
     public String toString() {
         return "OrderItem{" +
                 "id=" + id +
-                ", user=" + user +
-                ", product=" + product +
+                ", user=" + user.getUserName() +
+                ", product=" + product.getName() +
                 ", num=" + num +
                 ", success=" + success +
                 ", time='" + time + '\'' +

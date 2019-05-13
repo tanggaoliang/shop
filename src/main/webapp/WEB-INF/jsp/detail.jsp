@@ -49,6 +49,15 @@
 <div id="left">
     <img src="${product.fileName}" alt="">
 </div>
+<div id="info11" style="display: none">
+    <h4 align="center" style="color:black;margin-top: 20%"> 加入购物车成功 </h4>
+</div>
+<div id="info12" style="display: none">
+    <h4 align="center" style="color:black;margin-top: 20%"> 拼购成功 </h4>
+</div>
+<div id="info13" style="display: none">
+    <h5 align="center" style="color:black;margin-top: 20%"> 你已经拼购了,邀请好友一起来拼购吧! </h5>
+</div>
 <div id="right">
     <form action="/createSingleOrder">
         <input type="hidden" name="productId" value="${product.id}">
@@ -68,44 +77,7 @@
                    value="拼单购买"></input>
         </div>
     </form>
-    <script>
-        // 拼单链接功能
-        $('#groupBuy').on("click", function () {
-            var pid =${product.id};
-            var uid =${user.id};
-            var num = parseInt($('#productNumberInput').val());
-            var page = "/groupBuy";
-            layui.use('layer', function () {
-                var layer = layui.layer;
-                $.ajax({
-                    url: page,
-                    async: false,
-                    type: "GET",
-                    dataType: 'json',
-                    contentType: "application/json",
-                    data: {"pid": pid, "uid": uid, "num": num},
-                    success: function () {
-                        layer.open({
-                            type: 1,
-                            area: ['300px', '200px'],
-                            title: '拼购网提示',
-                            content: $("#info12").html(),
-                            btn: ['确定'],
-                            btnAlign: 'c',//按钮居中,
-                            yes: function (index) {
-                                layer.close(index);
-                            }
-                        });
 
-
-                    }
-
-                });
-            });
-        })
-
-
-    </script>
 
 </div>
 
@@ -127,12 +99,7 @@
     </c:forEach>
 
 </div>
-<div id="info11" style="display: none">
-    <h4 align="center" style="color:black;margin-top: 20%"> 加入购物车成功 </h4>
-</div>
-<div id="info12" style="display: none">
-    <h4 align="center" style="color:black;margin-top: 20%"> 拼购成功 </h4>
-</div>
+
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
@@ -176,6 +143,65 @@
             });
         });
     })
+</script>
+<script>
+    // 拼单链接功能
+    $('#groupBuy').on("click", function () {
+        var pid =${product.id};
+        var uid =${user.id};
+        var num = parseInt($('#productNumberInput').val());
+        var page = "/groupBuy";
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            $.ajax({
+                url: page,
+                async: true,
+                type: "GET",
+                dataType: 'json',
+                contentType: "application/json",
+                data: {"pid": pid, "uid": uid, "num": num},
+                success: function (data) {
+                    console.log("成功")
+                    console.log("成功" + $("#info12").html())
+                    layer.open({
+                        type: 1,
+                        area: ['300px', '200px'],
+                        title: '拼购网提示',
+                        content: $("#info12").html(),
+                        btn: ['确定'],
+                        btnAlign: 'c',//按钮居中,
+                        yes: function (index) {
+                            layer.close(index);
+                            window.location.reload();
+                        }
+                    })
+
+
+                },
+                error: function (data) {
+                    console.log("失败")
+                    layer.open({
+                        type: 1,
+                        area: ['300px', '200px'],
+                        title: '拼购网提示',
+                        content: $("#info13").html(),
+                        btn: ['确定'],
+                        btnAlign: 'c',//按钮居中,
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+
+
+                },
+
+
+            });
+        });
+
+    })
+
+
 </script>
 
 

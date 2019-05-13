@@ -100,6 +100,7 @@ public class MyController {
         User user = (User) session.getAttribute("user");
         List<OrderItem> orderItems = orderItemService.listByCartByUid(user.getId());
         int totalPrice = getTotalPrice(orderItems);
+        session.setAttribute("totalPrice_pay", totalPrice);
         ModelAndView mav = new ModelAndView("cart");
         mav.addObject("orderItems", orderItems);
         mav.addObject("totalPrice", totalPrice);
@@ -109,7 +110,7 @@ public class MyController {
     private int getTotalPrice(List<OrderItem> orderItems) {
         int totalPrice = 0;
         for (OrderItem orderItem : orderItems) {
-            totalPrice += orderItem.getNum() * orderItem.getProduct().getPrice();
+            totalPrice += orderItem.getNum() * orderItem.getLastPrice();
         }
         return totalPrice;
     }
@@ -119,11 +120,23 @@ public class MyController {
     public Map<String, String> addProductToCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpSession session) {
         User user = (User) session.getAttribute("user");
         int uid = user.getId();
+        myOrderItem(pid, num, uid);
+        Map map = new HashMap(1);
+        map.put("info", "加入购物车成功");
+        return map;
+    }
+
+    /**
+     * @param pid
+     * @param num
+     * @param uid
+     */
+    private void myOrderItem(int pid, int num, int uid) {
         Integer orderItemId = orderItemService.ifInCart(uid, pid);
         if (null == orderItemId) {
             OrderItem orderItem = new OrderItem();
             orderItem.setNum(num);
-            orderItem.setUser(user);
+            orderItem.setUser(userService.get(uid));
             orderItem.setProduct(productService.get(pid));
             orderItem.setLastPrice(productService.get(pid).getPrice());
             orderItem.setSuccess(0);
@@ -133,9 +146,6 @@ public class MyController {
             orderItem1.setNum(orderItem1.getNum() + num);
             orderItemService.update(orderItem1);
         }
-        Map map = new HashMap(1);
-        map.put("info", "加入购物车成功");
-        return map;
     }
 
     @RequestMapping(value = "/deleteOrderItem/{pid}")
@@ -196,8 +206,8 @@ public class MyController {
         orderItem.setNum(productNumberInput);
         orderItem.setSuccess(1);
         orderItemService.add(orderItem);
+        session.setAttribute("totalPrice_pay", orderItem.getLastPrice() * orderItem.getNum());
         return "success";
-
     }
 
     @RequestMapping("/order")
@@ -395,9 +405,21 @@ public class MyController {
 
     @RequestMapping("/groupBuy")
     @ResponseBody
-    public Map<String, String> groupBuy(int pid, int uid, int num, HttpSession session) {
+    public Map groupBuy(int pid, int uid, int num) {
+
         GroupBuy groupBuy = groupBuyService.inGroup(pid);
         Integer userNum = 0;
+        if (groupBuy.getUid1() != null) {
+            if (uid == groupBuy.getUid1()) {
+                return null;
+            }
+        }
+        if (groupBuy.getUid2() != null) {
+            if (uid == groupBuy.getUid2()) {
+                return null;
+            }
+        }
+
         if (groupBuy == null) {
             groupBuy = new GroupBuy();
             groupBuy.setUid1(uid);
@@ -416,6 +438,8 @@ public class MyController {
             Product product = productService.get(pid);
             groupBuy.setUid3(uid);
             groupBuy.setNum3(num);
+            groupBuy.setUserNum(3);
+            groupBuyService.update(groupBuy);
             OrderItem orderItem1 = new OrderItem();
             OrderItem orderItem2 = new OrderItem();
             OrderItem orderItem3 = new OrderItem();
@@ -431,14 +455,28 @@ public class MyController {
             orderItem1.setLastPrice(product.getPrice2());
             orderItem2.setLastPrice(product.getPrice2());
             orderItem3.setLastPrice(product.getPrice2());
-            orderItemService.add(orderItem1);
-            orderItemService.add(orderItem2);
-            orderItemService.add(orderItem3);
+
+            tangInsertOrderItem(orderItem1);
+            tangInsertOrderItem(orderItem2);
+            tangInsertOrderItem(orderItem3);
+
             groupBuyService.delete(groupBuy.getId());
         }
         Map map = new HashMap(1);
         map.put("userNum", userNum);
         return map;
+    }
+
+    private void tangInsertOrderItem(OrderItem orderItem) {
+        Integer orderItemId = orderItemService.ifInCart(orderItem.getUser().getId(), orderItem.getProduct().getId());
+        if (null == orderItemId) {
+            orderItemService.add(orderItem);
+        } else {
+            OrderItem orderItem1 = orderItemService.get(orderItemId);
+            orderItem1.setNum(orderItem1.getNum() + orderItem.getNum());
+            orderItem1.setLastPrice(orderItem1.getProduct().getPrice2());
+            orderItemService.update(orderItem1);
+        }
     }
 
 
