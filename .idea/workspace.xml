@@ -10,18 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01fafd76-84d6-4b51-a660-33241bbec7a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/shop/uploadImage/f1DEXpN8VF.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/pojo/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/pojo/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tang/test/ProductTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tang/test/ProductTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderItem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderItem.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/pojo/OrderItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/test/ProductTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/com/tang/test/ProductTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/OrderItem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/classes/mapper/OrderItem.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/evaluate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/shop/WEB-INF/jsp/evaluate.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,33 +58,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="837">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editCategory.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="420" column="9" selection-start-line="420" selection-start-column="9" selection-end-line="420" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="227" selection-start-line="227" selection-end-line="227" />
+            <state relative-caret-position="100">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
             </state>
           </provider>
         </entry>
@@ -193,7 +178,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/service/impl/EvaluateService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/Category.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/Evaluate.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/evaluate.css" />
@@ -233,9 +217,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/UploadedImageFile.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/OrderItem.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/pojo/OrderItem.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp" />
       </list>
     </option>
   </component>
@@ -284,8 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,23 +281,12 @@
               <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="uploadImage" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,8 +308,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.tang.pojo" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\IDEAProject\shop\src\main\webapp\static\image" />
+      <recent name="H:\IDEAProject\shop\src\main\webapp\WEB-INF\jsp" />
+      <recent name="H:\IDEAProject\shop\src\main\resources" />
+      <recent name="H:\IDEAProject\shop\src\main\java\com\tang\mapper" />
+      <recent name="H:\IDEAProject\shop\src\main\webapp\static" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\IDEAProject\shop\src\main\resources\mapper" />
@@ -353,12 +329,8 @@
       <recent name="com.tang.controller" />
       <recent name="com.tang.util" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\IDEAProject\shop\src\main\webapp\static\image" />
-      <recent name="H:\IDEAProject\shop\src\main\webapp\WEB-INF\jsp" />
-      <recent name="H:\IDEAProject\shop\src\main\resources" />
-      <recent name="H:\IDEAProject\shop\src\main\java\com\tang\mapper" />
-      <recent name="H:\IDEAProject\shop\src\main\webapp\static" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tang.pojo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -576,6 +548,11 @@
       <workItem from="1557661660246" duration="18603000" />
       <workItem from="1557719679644" duration="3126000" />
       <workItem from="1557723086262" duration="12022000" />
+      <workItem from="1558007550040" duration="1469000" />
+      <workItem from="1558166241321" duration="2209000" />
+      <workItem from="1558255674222" duration="19000" />
+      <workItem from="1558410602856" duration="807000" />
+      <workItem from="1558574516809" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="2019 4 24">
       <created>1556091026112</created>
@@ -647,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557743029184</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2019 5 16">
+      <created>1558007657370</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558007657370</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -683,7 +667,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409813000" />
+    <option name="totallyTimeSpent" value="414933000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,9 +679,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
+    <frame x="-8" y="0" width="1936" height="1038" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2585837" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973205" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -706,7 +691,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943925" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49410504" weight="0.7316785" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5997854" weight="0.34515366" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.5997854" visible="true" weight="0.5744681" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Application Servers" order="6" weight="0.3286052" />
@@ -777,7 +762,8 @@
     <MESSAGE value="2019 5 9" />
     <MESSAGE value="2019 5 10" />
     <MESSAGE value="2019 5 13" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019 5 13" />
+    <MESSAGE value="2019 5 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019 5 16" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -799,20 +785,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/manageAddUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1183,35 +1155,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="227" selection-start-line="227" selection-end-line="227" />
+        <state relative-caret-position="294">
+          <caret line="417" column="44" lean-forward="true" selection-start-line="417" selection-start-column="44" selection-end-line="417" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/test/ProductTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="403">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/controller/MyController.java">
+    <entry file="jar://H:/maven_repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="420" column="9" selection-start-line="420" selection-start-column="9" selection-end-line="420" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="6076">
+          <caret line="227" selection-start-line="227" selection-end-line="227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editCategory.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/evaluate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>

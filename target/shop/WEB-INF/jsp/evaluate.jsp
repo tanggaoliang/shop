@@ -65,7 +65,7 @@
     <form action="/evaluateAction" class="info">
         <div class="info"><h2>评价内容:</h2></div>
         <input type="hidden" name="starNum" id="starNum" value="">
-        <textarea class="form-control info" rows="3" name="content"></textarea>
+        <textarea class="form-control info" rows="5" name="content"></textarea>
         <input type="hidden" name="pid" id="pid" value="${product.id}">
         <input type="hidden" name="uid" value="${user.id}">
         <button type="submit" class="btn btn-default" id="submitEvaluate">提交</button>

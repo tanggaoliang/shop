@@ -25,7 +25,7 @@
                     <li><a href="/order">我的订单</a></li>
                     <li><a href="/cart">购物车</a></li>
                     <li>
-                        <a href="#">我的收藏</a>
+                        <a href="/info">收货地址</a>
                     </li>
                     <li>
                         <div class="dropdown">
