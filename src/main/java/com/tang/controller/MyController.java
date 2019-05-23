@@ -9,6 +9,7 @@ package com.tang.controller;
 import com.tang.mapper.ProductMapper;
 import com.tang.pojo.*;
 import com.tang.service.*;
+import com.tang.util.Page;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -46,9 +47,16 @@ public class MyController {
     private GroupBuyService groupBuyService;
 
     @RequestMapping(value = "/showCategory/{cid}")
-    public ModelAndView showCategory(@PathVariable("cid") int cid) {
+    public ModelAndView showCategory(@PathVariable("cid") int cid, @RequestParam(value = "start", required = false) Integer start, HttpSession session) {
         ModelAndView mav = new ModelAndView("search");
-        List<Product> products = productService.listByCid(cid);
+        Page page = new Page();
+        int total = productService.countByCid(cid);
+        page.calculateLast(total);
+        page.setPageCount(total / page.getCount());
+        page.setStart(start);
+        page.setCid(cid);
+        List<Product> products = productService.listByCidByCount(page);
+        session.setAttribute("page", page);
         mav.addObject("products", products);
         return mav;
     }
@@ -79,19 +87,30 @@ public class MyController {
 
 
     @RequestMapping(value = "/search")
-    public ModelAndView search(@RequestParam("name") String name) {
-        List<Product> products = productService.listByName(name);
-        ModelAndView mav = new ModelAndView("search");
-        mav.addObject("products", products);
-        return mav;
-    }
-
-    @RequestMapping(value = "/search2")
-    public ModelAndView search2(@RequestParam("name") String name) {
-        List<Product> products = productService.listByName(name);
-        ModelAndView mav = new ModelAndView("manageProduct");
-        mav.addObject("products", products);
-        return mav;
+    public ModelAndView search(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "start", required = false) Integer start, HttpSession session) {
+        if (null == name) {
+            name = (String) session.getAttribute("searchName");
+        } else {
+            session.setAttribute("searchName", name);
+        }
+        Page page = new Page();
+        int total = productService.listByName(name).size();
+        page.setName(name);
+        page.setTotal(total);
+        page.calculateLast(total);
+        page.setPageCount(total / page.getCount());
+        page.setStart(start);
+        List<Product> products = productService.listByNameByPage(page);
+        User user = (User) session.getAttribute("user");
+        ModelAndView modelAndView = new ModelAndView();
+        if (user.getRid() == 1) {
+            modelAndView.setViewName("search");
+        } else {
+            modelAndView.setViewName("manageProduct");
+        }
+        session.setAttribute("page", page);
+        modelAndView.addObject("products", products);
+        return modelAndView;
     }
 
 
@@ -280,13 +299,24 @@ public class MyController {
         return info;
     }
 
-    @RequestMapping("/manageProduct/{cid}")
-    public ModelAndView manageProduct(@PathVariable("cid") int cid, HttpSession session) {
-        List<Product> products = productService.listByCid(cid);
-        session.setAttribute("products" + cid, products);
+    @RequestMapping("/manageProduct")
+    public ModelAndView manageProduct(@RequestParam(value = "cid", required = false) Integer cid, @RequestParam(value = "start", required = false) Integer start, HttpSession session) {
+        if (null == cid) {
+            cid = (Integer) session.getAttribute("cid");
+        } else {
+            session.setAttribute("cid", cid);
+        }
+        Page page = new Page();
+        int total = productService.countByCid(cid);
+        page.calculateLast(total);
+        page.setStart(start);
+        page.setPageNum(page.getStart() / page.getCount());
+        page.setPageCount(total / page.getCount());
+        page.setCid(cid);
+        List<Product> products = productService.listByCidByCount(page);
         ModelAndView modelAndView = new ModelAndView("manageProduct");
+        session.setAttribute("page", page);
         modelAndView.addObject("products", products);
-        session.setAttribute("cid", cid);
         return modelAndView;
     }
 
@@ -409,17 +439,19 @@ public class MyController {
 
         GroupBuy groupBuy = groupBuyService.inGroup(pid);
         Integer userNum = 0;
-        if (groupBuy.getUid1() != null) {
-            if (uid == groupBuy.getUid1()) {
-                return null;
+        if (groupBuy != null) {
+            if (null != groupBuy.getUid1()) {
+                if (groupBuy.getUid1() == uid) {
+                    return null;
+                }
             }
-        }
-        if (groupBuy.getUid2() != null) {
-            if (uid == groupBuy.getUid2()) {
-                return null;
+            if (null != groupBuy.getUid2()) {
+                if (groupBuy.getUid2() == uid) {
+                    return null;
+                }
             }
-        }
 
+        }
         if (groupBuy == null) {
             groupBuy = new GroupBuy();
             groupBuy.setUid1(uid);
@@ -477,6 +509,17 @@ public class MyController {
             orderItem1.setLastPrice(orderItem1.getProduct().getPrice2());
             orderItemService.update(orderItem1);
         }
+    }
+
+    @RequestMapping("/home")
+    public String home(@RequestParam(value = "start", required = false) Integer start, HttpSession session) {
+        Page page = (Page) session.getAttribute("page");
+        page.setStart(start);
+        List<Product> products = productService.listByCidByCount(page);
+        page.setTotal(products.size());
+        session.setAttribute("page", page);
+        session.setAttribute("products", products);
+        return "home";
     }
 
 

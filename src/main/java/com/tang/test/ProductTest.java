@@ -11,29 +11,36 @@ import com.tang.mapper.ProductMapper;
 import com.tang.pojo.Category;
 import com.tang.pojo.OrderItem;
 import com.tang.pojo.Product;
+import com.tang.service.CategoryService;
 import com.tang.service.OrderItemService;
 import com.tang.service.ProductService;
+import com.tang.util.Page;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-transaction-full.xml")
 public class ProductTest {
     @Autowired
-    OrderItemService orderItemService;
+    ProductService productService;
+    @Autowired
+    CategoryService categoryService;
 
     @Test
     public void query() {
-
-        int a=1;
-        Integer b=1;
-        System.out.println(a==b);
+        List <String> a=new ArrayList<>();
+        a.add("321");
+        a.add("321");
+        a.add("321");
+        System.out.println(a.size());
     }
+
 }
 
 

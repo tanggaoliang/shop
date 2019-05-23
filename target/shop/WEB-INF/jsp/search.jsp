@@ -75,6 +75,17 @@
         </a>
     </c:forEach>
 </div>
+<div class="footer">
+    <div >
+        <a href="?start=0">首 页</a>
+        <a href="?start=${page.start-page.count}">上一页</a>
+        <span style="font-weight:bold">${page.pageNum}</span>
+        <a href="?start=${page.start+page.count}">下一页</a>
+        <a href="?start=${page.last}">末 页</a>
+        <span style="font-weight:bold">共${page.pageCount}页</span>
+    </div>
+</div>
+
 
 
 <script>

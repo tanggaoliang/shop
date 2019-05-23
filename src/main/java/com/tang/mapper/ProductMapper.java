@@ -7,6 +7,7 @@
 package com.tang.mapper;
 
 import com.tang.pojo.Product;
+import com.tang.util.Page;
 
 import java.util.List;
 
@@ -20,6 +21,12 @@ public interface ProductMapper {
     int update(Product product);
 
     List<Product> listByCid(int cid);
+
+    int countByCid(int cid);
+
+    List<Product> listByCidByCount(Page page);
+
+    List<Product> listByNameByPage(Page page);
 
     List<Product> listAll();
 

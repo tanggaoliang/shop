@@ -59,6 +59,20 @@
                  left join product p on c.id = p.cid
         where cid = #{cid}
     </select>
+    <select id="countByCid" resultType="int">
+        select count(*)
+        from product
+        where cid = #{0}
+    </select>
+    <select id="listByCidByCount" parameterType="com.tang.util.Page" resultMap="productBean">
+        select c.*, p.*, c.id 'cid', p.id 'pid', c.name 'cname', p.name 'pname'
+        from product p
+        join category c on p.cid = c.id
+        where cid = #{cid}
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+    </select>
     <select id="listAll" resultMap="productBean">
         select c.*, p.*, c.id 'cid', p.id 'pid', c.name 'cname', p.name 'pname'
         from category c
@@ -69,6 +83,15 @@
         select *
         from product
         where name like concat('%', #{name}, '%')
+    </select>
+
+    <select id="listByNameByPage" parameterType="com.tang.util.Page" resultType="Product">
+        select *
+        from product
+        where name like concat('%', #{name}, '%')
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
     </select>
 
 

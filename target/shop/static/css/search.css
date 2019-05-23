@@ -14,3 +14,8 @@
 #left button{
     width: 60%;
 }
+.footer{
+    width: 20%;
+    float: left;
+    margin: 3% 40%;
+}

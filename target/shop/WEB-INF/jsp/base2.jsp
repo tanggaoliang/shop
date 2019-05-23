@@ -40,11 +40,11 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">商品管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/manageProduct/1">手机</a></dd>
-                        <dd><a href="/manageProduct/2">电脑</a></dd>
-                        <dd><a href="/manageProduct/3">服装</a></dd>
-                        <dd><a href="/manageProduct/4">食品</a></dd>
-                        <dd><a href="/manageProduct/5">图书</a></dd>
+                        <dd><a href="/manageProduct?cid=1">手机</a></dd>
+                        <dd><a href="/manageProduct?cid=2">电脑</a></dd>
+                        <dd><a href="/manageProduct?cid=3">服装</a></dd>
+                        <dd><a href="/manageProduct?cid=4">食品</a></dd>
+                        <dd><a href="/manageProduct?cid=5">图书</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item layui-nav-itemed">

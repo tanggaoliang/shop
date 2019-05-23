@@ -138,11 +138,17 @@ public class UserController {
             String salt = user.getSalt();
             String passwordEncoded = new SimpleHash("md5", password, salt, 2).toString();
             if (passwordEncoded.equals(passwordInDB)) {
+                Page page = new Page();
+                int total = productService.countByCid(1);
+                page.setTotal(total);
+                page.setPageCount(total / page.getCount());
+                page.calculateLast(total);
+                List<Product> products = productService.listByCidByCount(page);
+                session.setAttribute("products", products);
+                session.setAttribute("page", page);
                 session.setAttribute("user", user);
                 // 2是管理员用户
                 if (user.getRid() == 1) {
-                    List<Product> products = productService.listByCid(1);
-                    session.setAttribute("products", products);
                     ModelAndView modelAndView = new ModelAndView("redirect:/home");
                     return modelAndView;
                 } else {

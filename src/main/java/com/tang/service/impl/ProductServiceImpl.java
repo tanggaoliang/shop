@@ -11,6 +11,7 @@ import com.tang.mapper.ProductMapper;
 import com.tang.pojo.Category;
 import com.tang.pojo.Product;
 import com.tang.service.ProductService;
+import com.tang.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,21 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+    @Override
+    public List<Product> listByNameByPage(Page page) {
+        return productMapper.listByNameByPage(page);
+    }
+
+    @Override
+    public List<Product> listByCidByCount(Page page) {
+        return productMapper.listByCidByCount(page);
+    }
+
+    @Override
+    public int countByCid(int cid) {
+        return productMapper.countByCid(cid);
+    }
+
     @Override
     public int bigIndex() {
         return productMapper.biGIndex();

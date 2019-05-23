@@ -38,7 +38,8 @@
                                 ${user.userName}
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1" style="background: black">
+                            <ul class="dropdown-menu myDropdown" aria-labelledby="dropdownMenu1"
+                                style="background: black">
                                 <li><a href="/changePassword"><span class="mySpan">改密</span></a></li>
                                 <li><a href="/"><span class="mySpan">切换</span></a></li>
                             </ul>
@@ -116,9 +117,6 @@
             <a href="javascript:;" class="btn_right">
                 <i class="iconfont icon-zuoyoujiantou-copy-copy"></i>
             </a>
-            <%--            <a href="javascript:;" class="btn_close">--%>
-            <%--                <i class="iconfont icon-icon-test"></i>--%>
-            <%--            </a>--%>
             <div class="buttons clearfix">
                 <a href="javascript:;" class="color"></a>
                 <a href="javascript:;"></a>
@@ -134,8 +132,6 @@
 
 <div id="main">
     <h1 align="center" style="color:green"> 手机 </h1>
-
-
     <c:forEach items="${products}" var="product" varStatus="st">
         <a href="/detail/${product.id}" class="product_a">
             <div class="productDiv">
@@ -146,10 +142,18 @@
         </a>
     </c:forEach>
 
-
 </div>
-<%--<div id="footer"></div>--%>
-<%--导航栏运动js--%>
+<div class="footer">
+    <div>
+        <a href="?start=0">首 页</a>
+        <a href="?start=${page.start-page.count}">上一页</a>
+        <span style="font-weight:bold">${page.pageNum}</span>
+        <a href="?start=${page.start+page.count}">下一页</a>
+        <a href="?start=${page.last}">末 页</a>
+        <span style="font-weight:bold">共${page.pageCount}页</span>
+    </div>
+</div>
+
 <script>
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {

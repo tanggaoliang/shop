@@ -38,7 +38,7 @@
         from orderitem o
                  left join product p on o.pid = p.Id
                  left join user u on o.uid = u.Id
-            and o.Id = #{0}
+            where o.Id = #{0}
         order by time desc
     </select>
     <select id="ifInCart" resultType="int">
