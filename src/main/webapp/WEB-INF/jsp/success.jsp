@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
 <html>
 <head>
-    <title>支付成功</title>
+    <title>支付宝 - 网上支付 安全快速！</title>
     <link rel="stylesheet" type="text/css" href="/static/css/home.css">
 </head>
 <body>
@@ -45,9 +45,7 @@
         </div>
     </nav>
 </div>
-<h1></h1>
-<div><img src="/static/image/alipay.png" alt="" style="margin: 0 33%;width: 30%"></div>
-<h2 align="center" style="color:green">总价格:￥${totalPrice_pay}</h2>
-<h2 align="center" style="color:green"><a href="/order">查看订单</a></h2>
+<div><img src="/static/image/alipay.png" alt="" style="margin: -1% 0%;width: 100%;position: absolute"></div>
+<h4><span style="color:#FF6600 ;font-weight: bold;position: absolute" class="payNum">${totalPrice_pay}.00</span>元</h4>
 </body>
 </html>
