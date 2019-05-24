@@ -2,7 +2,8 @@
  * @author: tang gao liang
  * @time:2019/4/20 11:01:12
  * @unique: 唐高亮LIANG
- * @qq:1440535574
+ * @qq:1440535574 count分八页
+ * pageCount总页数
  */
 package com.tang.util;
 
@@ -17,7 +18,8 @@ public class Page {
     int pageCount = 1;
 
     public int getPageCount() {
-        return pageCount+1;
+
+        return pageCount;
     }
 
     public void setPageCount(int pageCount) {
@@ -46,6 +48,7 @@ public class Page {
 
     public int getPageNum() {
         int a = this.start / this.count + 1;
+
         return a;
     }
 

@@ -52,7 +52,7 @@ public class MyController {
         Page page = new Page();
         int total = productService.countByCid(cid);
         page.calculateLast(total);
-        page.setPageCount(total / page.getCount());
+        page.setPageCount(calc(total, page.getCount()));
         page.setStart(start);
         page.setCid(cid);
         List<Product> products = productService.listByCidByCount(page);
@@ -98,7 +98,7 @@ public class MyController {
         page.setName(name);
         page.setTotal(total);
         page.calculateLast(total);
-        page.setPageCount(total / page.getCount());
+        page.setPageCount(calc(total, page.getCount()));
         page.setStart(start);
         List<Product> products = productService.listByNameByPage(page);
         User user = (User) session.getAttribute("user");
@@ -111,6 +111,17 @@ public class MyController {
         session.setAttribute("page", page);
         modelAndView.addObject("products", products);
         return modelAndView;
+    }
+
+    private int calc(int total, int count) {
+        int result = total / count + 1;
+        if (total % count == 0) {
+            result--;
+        }
+        if (0 == result) {
+            result = 1;
+        }
+        return result;
     }
 
 
@@ -311,7 +322,7 @@ public class MyController {
         page.calculateLast(total);
         page.setStart(start);
         page.setPageNum(page.getStart() / page.getCount());
-        page.setPageCount(total / page.getCount());
+        page.setPageCount(calc(total, page.getCount()));
         page.setCid(cid);
         List<Product> products = productService.listByCidByCount(page);
         ModelAndView modelAndView = new ModelAndView("manageProduct");
