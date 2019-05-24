@@ -33,8 +33,8 @@
             </thead>
             <c:forEach items="${orderItemList}" var="orderItem" varStatus="st">
                 <tr>
-                    <td class="info"><a href="/evaluate/${orderItem.product.id}">${orderItem.user.userName}</a></td>
-                    <td class="active"><a href="/detail/${orderItem.product.id}">${orderItem.product.name}</a></td>
+                    <td class="info">${orderItem.user.userName}</td>
+                    <td class="active"><a href="/manageEditProduct/${orderItem.product.id}">${orderItem.product.name}</a></td>
                     <td class="success"><span class="productPrice"
                                               id="${orderItem.id}">￥${orderItem.product.price}</span></td>
                     <td class="warning"><span>${orderItem.num}</span></td>

@@ -34,16 +34,10 @@ public class ProductTest {
 
     @Test
     public void query() {
-        List<Product> products = productService.listByCid(1);
-        int temp = 6;
+        List<Product> products = productService.listAll();
         for (Product product : products) {
-            if (product.getId() >= 40) {
-                product.setName("手机测试" + (++temp));
-                product.setPrice(temp * 100);
-                product.setPrice2(temp * 80);
-                product.setInfo("手机描述信息" + temp);
-                productService.update(product);
-            }
+            product.setPrice2(product.getPrice()*8/10);
+            productService.update(product);
         }
     }
 
