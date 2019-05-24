@@ -11,11 +11,12 @@
 
 }
 
-#left button{
+#left button {
     width: 60%;
 }
-.footer{
+
+.footer {
     width: 20%;
     float: left;
-    margin: 3% 40%;
+    margin: 0 40%;
 }

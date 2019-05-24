@@ -45,7 +45,7 @@
                 </div>
                 <div id="productPrice" class="info">产品价格 : <input type="text" name="price"
                                                                   value="${product.price}"></div>
-                <div id="productPrice2" class="info">拼单价格 : <input type="text" name="price"
+                <div id="productPrice2" class="info">拼单价格 : <input type="text" name="price2"
                                                                   value="${product.price2}"></div>
                 <div id="productInfo" class="info">产品信息 : <textarea type="text" name="info" rows="3"
                 >${product.info}</textarea></div>

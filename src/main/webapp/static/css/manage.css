@@ -10,9 +10,9 @@ body {
     height: 10%;
 }
 .footer{
-    width: 50%;
+    width: 30%;
     float: left;
-    margin: 3% 25%;
+    margin: -1% 35%;
 }
 
 #header ul {
@@ -65,7 +65,7 @@ body {
 }
 
 #SearcherDiv {
-    margin-top: 3%;
+    margin-top: 0%;
     margin-left: 1%;
     float: left;
     width: 80%;
@@ -73,8 +73,9 @@ body {
 }
 
 #searchForm {
+    float: left;
     display: block;
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -213,7 +214,5 @@ span {
 }
 
 #addProduct{
-    margin-left: 2%;
-    margin-top: -5%;
-    margin-bottom: 2%;
+    float: left;
 }

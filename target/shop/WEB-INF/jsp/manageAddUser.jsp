@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" isELIgnored="false" %>
 <%@ include file="/WEB-INF/jsp/base.jsp" %>
+<%@ include file="/WEB-INF/jsp/base2.jsp" %>
 <html>
 <head>
     <meta charset="utf-8">

@@ -37,7 +37,7 @@
                                               id="${evaluate.id}">${evaluate.user.userName}</span></td>
                     <td class="active"><a href="/manageEditProduct/${evaluate.product.id}">${evaluate.product.name}</a>
                     </td>
-                    <td class="warning"><span>${evaluate.content}</span></td>
+                    <td class="warning" style="width: 60%"><span>${evaluate.content}</span></td>
                     <td class="danger"><span>${evaluate.time}</span></td>
                     <td><a href="/deleteEvaluate/${evaluate.id}">删除</a></td>
                 </tr>

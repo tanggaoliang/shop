@@ -354,7 +354,7 @@ public class MyController {
     public String updateProduct(Product product, HttpSession session) {
         productService.update(product);
         int cid = (int) session.getAttribute("cid");
-        return "redirect:/manageProduct/" + cid;
+        return "redirect:/manageProduct?cid=" + cid;
 
     }
 
@@ -363,14 +363,14 @@ public class MyController {
         int cid = (int) session.getAttribute("cid");
         product.setCategory(categoryService.get(cid));
         productService.add(product);
-        return "redirect:/manageProduct/" + cid;
+        return "redirect:/manageProduct?cid=" + cid;
     }
 
     @RequestMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable("id") int id, HttpSession session) {
         productService.delete(id);
         int cid = (int) session.getAttribute("cid");
-        return "redirect:/manageProduct/" + cid;
+        return "redirect:/manageProduct?cid=" + cid;
     }
 
     @RequestMapping("/addProduct")
@@ -514,6 +514,7 @@ public class MyController {
     @RequestMapping("/home")
     public String home(@RequestParam(value = "start", required = false) Integer start, HttpSession session) {
         Page page = (Page) session.getAttribute("page");
+        page.setCid(1);
         page.setStart(start);
         List<Product> products = productService.listByCidByCount(page);
         page.setTotal(products.size());

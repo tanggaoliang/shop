@@ -24,7 +24,7 @@
         <div style="padding: 15px;">
             <div id="main">
                 <div id="SearcherDiv">
-                    <button class="layui-btn" onclick="location.href='/addProduct'" id="addProduct">增加商品</button>
+                    <div id="addProductDiv"><button class="layui-btn" onclick="location.href='/addProduct'" id="addProduct">增加商品</button></div>
                     <form class="navbar-form navbar-left" role="search" id="searchForm" action="/search">
                         <div class="form-group" id="searchBox">
                             <input type="text" class="form-control" placeholder="Search" id="searchContent" name="name">
