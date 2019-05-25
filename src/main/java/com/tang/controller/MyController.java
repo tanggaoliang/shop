@@ -127,7 +127,7 @@ public class MyController {
         User user = (User) session.getAttribute("user");
         List<OrderItem> orderItems = orderItemService.listByCartByUid(user.getId());
         int totalPrice = getTotalPrice(orderItems);
-        session.setAttribute("totalPrice_pay", totalPrice);
+        session.setAttribute("totalPricePay", totalPrice);
         ModelAndView mav = new ModelAndView("cart");
         mav.addObject("orderItems", orderItems);
         mav.addObject("totalPrice", totalPrice);
@@ -233,7 +233,7 @@ public class MyController {
         orderItem.setNum(productNumberInput);
         orderItem.setSuccess(1);
         orderItemService.add(orderItem);
-        session.setAttribute("totalPrice_pay", orderItem.getLastPrice() * orderItem.getNum());
+        session.setAttribute("totalPricePay", orderItem.getLastPrice() * orderItem.getNum());
         return "success";
     }
 
@@ -443,8 +443,10 @@ public class MyController {
 
     @RequestMapping("/groupBuy")
     @ResponseBody
-    public Map groupBuy(int pid, int uid, int num) {
-
+    public Map groupBuy(int pid, int uid, int num, HttpSession session) {
+        int totalPricePay = 0;
+        totalPricePay = productService.get(pid).getPrice2() * num;
+        session.setAttribute("totalPricePay", totalPricePay);
         GroupBuy groupBuy = groupBuyService.inGroup(pid);
         Integer userNum = 0;
         if (groupBuy != null) {
@@ -495,11 +497,15 @@ public class MyController {
             orderItem1.setLastPrice(product.getPrice2());
             orderItem2.setLastPrice(product.getPrice2());
             orderItem3.setLastPrice(product.getPrice2());
-
-            tangInsertOrderItem(orderItem1);
-            tangInsertOrderItem(orderItem2);
-            tangInsertOrderItem(orderItem3);
-
+            orderItem1.setSuccess(1);
+            orderItem2.setSuccess(1);
+            orderItem3.setSuccess(1);
+            orderItemService.add(orderItem1);
+            orderItemService.add(orderItem2);
+            orderItemService.add(orderItem3);
+//            tangInsertOrderItem(orderItem1);
+//            tangInsertOrderItem(orderItem2);
+//            tangInsertOrderItem(orderItem3);
             groupBuyService.delete(groupBuy.getId());
         }
         Map map = new HashMap(1);

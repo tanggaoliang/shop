@@ -46,6 +46,6 @@
     </nav>
 </div>
 <div><img src="/static/image/alipay.png" alt="" style="margin: -1% 0%;width: 100%;position: absolute"></div>
-<h4><span style="color:#FF6600 ;font-weight: bold;position: absolute" class="payNum">${totalPrice_pay}.00</span>元</h4>
+<h4><span style="color:#FF6600 ;font-weight: bold;position: absolute" class="payNum">${totalPricePay}.00</span>元</h4>
 </body>
 </html>

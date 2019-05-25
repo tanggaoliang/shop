@@ -38,9 +38,9 @@ public class ViewController {
         return "redirect:/";
     }
 
-    @RequestMapping("/user")
+    @RequestMapping("/success")
     public String user() {
-        return "user";
+        return "success";
     }
 
     @RequestMapping("/add")

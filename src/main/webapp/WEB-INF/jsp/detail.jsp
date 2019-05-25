@@ -161,8 +161,6 @@
                 contentType: "application/json",
                 data: {"pid": pid, "uid": uid, "num": num},
                 success: function (data) {
-                    console.log("成功")
-                    console.log("成功" + $("#info12").html())
                     layer.open({
                         type: 1,
                         area: ['300px', '200px'],
@@ -172,7 +170,9 @@
                         btnAlign: 'c',//按钮居中,
                         yes: function (index) {
                             layer.close(index);
-                            window.location.reload();
+                            window.location.href="/success";
+                            // 刷新当前页面
+                            // window.location.reload();
                         }
                     })
 
