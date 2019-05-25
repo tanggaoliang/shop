@@ -118,9 +118,6 @@ public class MyController {
         if (total % count == 0) {
             result--;
         }
-        if (0 == result) {
-            result = 1;
-        }
         return result;
     }
 
@@ -425,8 +422,8 @@ public class MyController {
     @RequestMapping("/manageOrderItem")
     public ModelAndView manageOrderItem() {
         ModelAndView modelAndView = new ModelAndView("manageOrderItem");
-        List<OrderItem> orderItemList = orderItemService.listAllOrder();
-        modelAndView.addObject("orderItemList", orderItemList);
+        List<OrderItem> orderItemList1 = orderItemService.listAllOrder();
+        modelAndView.addObject("orderItemList1", orderItemList1);
         return modelAndView;
     }
 

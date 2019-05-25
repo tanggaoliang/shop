@@ -19,7 +19,7 @@
 <h1 align="center" id="title">拼购网登录</h1>
 <div id="outBox">
     <div class="main">
-        <form class="form-horizontal" action="/loginAction" method="post">
+        <form class="form-horizontal" action="./loginAction" method="post">
             <div class="form-group">
                 <label for="userName" class="col-sm-2 control-label">用户名:</label>
                 <div class="col-sm-10">

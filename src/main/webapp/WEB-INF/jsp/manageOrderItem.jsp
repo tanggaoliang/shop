@@ -31,7 +31,7 @@
             <th>时间</th>
             <th>删除</th>
             </thead>
-            <c:forEach items="${orderItemList}" var="orderItem" varStatus="st">
+            <c:forEach items="${orderItemList1}" var="orderItem" varStatus="st">
                 <tr>
                     <td class="info">${orderItem.user.userName}</td>
                     <td class="active"><a href="/manageEditProduct/${orderItem.product.id}">${orderItem.product.name}</a></td>
